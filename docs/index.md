@@ -1,2 +1,5 @@
-This is taking me some time to learn.
-Here is a link to a new page?
+{% for file in site.static_files %}
+{% if file.extname == ".md" %}
+[{{ file.basename }}]({{site.baseurl}}/{{file.basename}}.html)
+{% endif %}
+{% endfor %}
