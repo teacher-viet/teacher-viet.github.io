@@ -11,8 +11,6 @@ T&#x00EA;n t&#x00F4;i l&#x00E0; ...
 
 <!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
 
-<center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a></center><br /><center>This work by <a xmlns:cc="http://creativecommons.org/ns#" href="about" property="cc:attributionName" rel="cc:attributionURL">https://vietnamenglish2020.wordpress.com/about/</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a></center>
-
 <style>
 
 :root{
