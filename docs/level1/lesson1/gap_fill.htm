@@ -16,7 +16,7 @@ Gap fill
 
 <!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
 
-<h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao</a></b></h2><button onclick="window.print()">Print this page</button></center>
+<h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao </a></b></h2><button onclick="window.print()">Print this page</button></center>
 
 <style>
 
@@ -40,7 +40,7 @@ Gap fill
 	--strFuncLightColor: #ffffff;
 	--strFuncShadeColor: #7f7f7f;
 	--strLinkColor:      #d5000d;
-	--strVLinkColor:     #0000cc;
+	--strVLinkColor:     #0000CC;
 	
 	--strNavBarColor:    #000000;
 	--strNavLightColor:  #7f7f7f;
@@ -48,7 +48,7 @@ Gap fill
 	--strNavTextColor:   #ffffff;
 	
 	--strPageBGColor:    #e7e7e7;
-	--strExBGColor:      #ffffff;
+	--strExBGColor:      #FFFFFF;
 }
 
 body{
@@ -230,16 +230,6 @@ div.Feedback {
 	font-size: 1em;
 }
 
-
-
-
-.ReadingText{
-	text-align: left;
-}
-
-#ReadingDiv h3.ExerciseSubtitle{
-	color: var(--strTextColor);
-}
 
 
 
@@ -992,61 +982,61 @@ I[0] = new Array();
 I[0][1] = new Array();
 I[0][1][0] = new Array();
 I[0][1][0][0] = '\u0043\u0068\u00E0\u006F';
-I[0][2]='\u0063';
+I[0][2]='';
 
 I[1] = new Array();
 I[1][1] = new Array();
 I[1][1][0] = new Array();
 I[1][1][0][0] = '\u0063\u0068\u1ECB';
-I[1][2]='\u0063';
+I[1][2]='';
 
 I[2] = new Array();
 I[2][1] = new Array();
 I[2][1][0] = new Array();
 I[2][1][0][0] = '\u0074\u00EA\u006E';
-I[2][2]='\u0074';
+I[2][2]='';
 
 I[3] = new Array();
 I[3][1] = new Array();
 I[3][1][0] = new Array();
 I[3][1][0][0] = '\u006C\u00E0';
-I[3][2]='\u006C';
+I[3][2]='';
 
 I[4] = new Array();
 I[4][1] = new Array();
 I[4][1][0] = new Array();
 I[4][1][0][0] = '\u0043\u00F2\u006E';
-I[4][2]='\u0063';
+I[4][2]='';
 
 I[5] = new Array();
 I[5][1] = new Array();
 I[5][1][0] = new Array();
 I[5][1][0][0] = '\u0067\u00EC';
-I[5][2]='\u0067';
+I[5][2]='';
 
 I[6] = new Array();
 I[6][1] = new Array();
 I[6][1][0] = new Array();
 I[6][1][0][0] = '\u0074\u00EA\u006E';
-I[6][2]='\u0074';
+I[6][2]='';
 
 I[7] = new Array();
 I[7][1] = new Array();
 I[7][1][0] = new Array();
 I[7][1][0][0] = '\u0076\u0075\u0069';
-I[7][2]='\u0076';
+I[7][2]='';
 
 I[8] = new Array();
 I[8][1] = new Array();
 I[8][1][0] = new Array();
 I[8][1][0][0] = '\u0063\u0169\u006E\u0067';
-I[8][2]='\u0063';
+I[8][2]='';
 
 I[9] = new Array();
 I[9][1] = new Array();
 I[9][1][0] = new Array();
 I[9][1][0][0] = '\u0067\u1EB7\u0070';
-I[9][2]='\u0067';
+I[9][2]='';
 
 
 State = new Array();
@@ -1366,11 +1356,13 @@ function TypeChars(Chars){
 <div class="NavButtonBar" id="TopNavBar">
 
 
-<button class="NavButton" onclick="history.back(); return false;">&lt;=Back</button>
+
+
+<button class="NavButton" onclick="location='contents.htm'; return false;"> Index </button>
 
 
 
-
+<button class="NavButton" onclick="location='nextpage.htm'; return false;">=&gt;</button>
 
 
 </div>
@@ -1396,22 +1388,14 @@ function TypeChars(Chars){
 <div id="ContainerDiv">
 
 
-<div class="ReadingContainer">
-
-	<div id="Reading">
-
-		<div id="ReadingDiv">
-<h3 class="ExerciseSubtitle">word list</h3><div class="ReadingText">g&#x1EB7;p<br />ch&#x00E0;o<br />c&#x0169;ng<br />ch&#x1ECB;<br />vui<br />t&#x00EA;n<br />l&#x00E0;<br />g&#x00EC;<br />t&#x00EA;n<br />c&#x00F2;n</div>
-		</div>
-	</div>
-
-</div>
-
-
 
 <div class="ExerciseContainer">
 
 
+
+<div id="WordsDiv" class="StdDiv">
+<span id="WordList" class="ClozeWordList">&#160;&#160; C&#x00F2;n &#160;&#160;&#160;&#160; c&#x0169;ng &#160;&#160;&#160;&#160; Ch&#x00E0;o &#160;&#160;&#160;&#160; ch&#x1ECB; &#160;&#160;&#160;&#160; g&#x00EC; &#160;&#160;&#160;&#160; g&#x1EB7;p &#160;&#160;&#160;&#160; l&#x00E0; &#160;&#160;&#160;&#160; t&#x00EA;n &#160;&#160;&#160;&#160; vui &#160;&#160;</span>
+</div>
 
 
 
@@ -1421,29 +1405,21 @@ function TypeChars(Chars){
 <button id="CheckButton1" class="FuncButton" onclick="CheckAnswers()">&#160;Check&#160;</button>
 
 
-<button class="FuncButton" onclick="ShowHint()">&#160;Hint&#160;</button>
-
 
  -->
  
 <div id="ClozeDiv">
 <form id="Cloze" method="post" autocomplete="off" onsubmit="return false;">
 <div class="ClozeBody">
-<span class="GapSpan" id="GapSpan0"><input type="text" autocomplete="off" id="Gap0" onfocus="TrackFocus(0)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(0)">[?]</button></span> anh.<br />V&#x00E2;ng, ch&#x00E0;o <span class="GapSpan" id="GapSpan1"><input type="text" autocomplete="off" id="Gap1" onfocus="TrackFocus(1)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(1)">[?]</button></span>. Ch&#x1ECB; <span class="GapSpan" id="GapSpan2"><input type="text" autocomplete="off" id="Gap2" onfocus="TrackFocus(2)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(2)">[?]</button></span> l&#x00E0; g&#x00EC;?<br />T&#x00F4;i t&#x00EA;n <span class="GapSpan" id="GapSpan3"><input type="text" autocomplete="off" id="Gap3" onfocus="TrackFocus(3)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(3)">[?]</button></span> Mai. <span class="GapSpan" id="GapSpan4"><input type="text" autocomplete="off" id="Gap4" onfocus="TrackFocus(4)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(4)">[?]</button></span> anh, anh t&#x00EA;n l&#x00E0; <span class="GapSpan" id="GapSpan5"><input type="text" autocomplete="off" id="Gap5" onfocus="TrackFocus(5)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(5)">[?]</button></span>?<br />T&#x00F4;i <span class="GapSpan" id="GapSpan6"><input type="text" autocomplete="off" id="Gap6" onfocus="TrackFocus(6)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(6)">[?]</button></span> l&#x00E0; Nam. R&#x1EA5;t <span class="GapSpan" id="GapSpan7"><input type="text" autocomplete="off" id="Gap7" onfocus="TrackFocus(7)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(7)">[?]</button></span> &#x0111;&#x01B0;&#x1EE3;c g&#x1EB7;p ch&#x1ECB;.<br />T&#x00F4;i <span class="GapSpan" id="GapSpan8"><input type="text" autocomplete="off" id="Gap8" onfocus="TrackFocus(8)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(8)">[?]</button></span> r&#x1EA5;t vui &#x0111;&#x01B0;&#x1EE3;c <span class="GapSpan" id="GapSpan9"><input type="text" autocomplete="off" id="Gap9" onfocus="TrackFocus(9)" onblur="LeaveGap()" class="GapBox" size="6"/><button style="line-height: 1.0" class="FuncButton" onclick="ShowClue(9)">[?]</button></span> anh.
+<span class="GapSpan" id="GapSpan0"><select id="Gap0"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> anh.<br />V&#x00E2;ng, ch&#x00E0;o <span class="GapSpan" id="GapSpan1"><select id="Gap1"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span>. Ch&#x1ECB; <span class="GapSpan" id="GapSpan2"><select id="Gap2"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> l&#x00E0; g&#x00EC;?<br />T&#x00F4;i t&#x00EA;n <span class="GapSpan" id="GapSpan3"><select id="Gap3"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> Mai. <span class="GapSpan" id="GapSpan4"><select id="Gap4"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> anh, anh t&#x00EA;n l&#x00E0; <span class="GapSpan" id="GapSpan5"><select id="Gap5"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span>?<br />T&#x00F4;i <span class="GapSpan" id="GapSpan6"><select id="Gap6"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> l&#x00E0; Nam. R&#x1EA5;t <span class="GapSpan" id="GapSpan7"><select id="Gap7"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> &#x0111;&#x01B0;&#x1EE3;c g&#x1EB7;p ch&#x1ECB;.<br />T&#x00F4;i <span class="GapSpan" id="GapSpan8"><select id="Gap8"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> r&#x1EA5;t vui &#x0111;&#x01B0;&#x1EE3;c <span class="GapSpan" id="GapSpan9"><select id="Gap9"><option value="">&#160;</option><option value="C&#x00F2;n">C&#x00F2;n</option><option value="c&#x0169;ng">c&#x0169;ng</option><option value="Ch&#x00E0;o">Ch&#x00E0;o</option><option value="ch&#x1ECB;">ch&#x1ECB;</option><option value="g&#x00EC;">g&#x00EC;</option><option value="g&#x1EB7;p">g&#x1EB7;p</option><option value="l&#x00E0;">l&#x00E0;</option><option value="t&#x00EA;n">t&#x00EA;n</option><option value="vui">vui</option></select></span> anh.c
 </div>
 </form>
 </div>
 
 
-<div class="Keypad" id="CharacterKeypad">
-<button onclick="TypeChars('\u00E0'); return false;">&#x00E0;</button> <button onclick="TypeChars('\u1EB7'); return false;">&#x1EB7;</button> <button onclick="TypeChars('\u00EA'); return false;">&#x00EA;</button> <button onclick="TypeChars('\u00EC'); return false;">&#x00EC;</button> <button onclick="TypeChars('\u1ECB'); return false;">&#x1ECB;</button> <button onclick="TypeChars('\u00F2'); return false;">&#x00F2;</button> <button onclick="TypeChars('\u0169'); return false;">&#x0169;</button> 
-</div>
-
 
 <button id="CheckButton2" class="FuncButton" onclick="CheckAnswers()">&#160;Check&#160;</button>
 
-
-<button class="FuncButton" onclick="ShowHint()">&#160;Hint&#160;</button>
 
 
 </div>
@@ -1462,11 +1438,13 @@ function TypeChars(Chars){
 <div class="NavButtonBar" id="BottomNavBar">
 
 
-<button class="NavButton" onclick="history.back(); return false;">&lt;=Back</button>
+
+
+<button class="NavButton" onclick="location='contents.htm'; return false;"> Index </button>
 
 
 
-
+<button class="NavButton" onclick="location='nextpage.htm'; return false;">=&gt;</button>
 
 
 </div>
