@@ -16,7 +16,7 @@ Arrange words to make sentences
 
 <!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
 
-<center>Learn Vietnamese with Bao</center>
+<h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao</a></b></h2><button onclick="window.print()">Print this page</button></center>
 
 <style>
 
@@ -1262,6 +1262,10 @@ function CheckAnswer(CheckType){
 		Score = Math.floor(((Segments.length-Penalties) * 100)/Segments.length);
 
 
+		if (OtherAnswers.length > 0){
+			WellDone += TheseAnswersToo + '<span class="Answer">' + OtherAnswers + '</span>';
+		}
+
 
 		WriteToGuess(WellDone);
 		ShowMessage(WellDone + '<br />' + YourScoreIs + ' ' + Score + '%.');
@@ -1413,14 +1417,14 @@ function DisplayExercise(StuffToDisplay){
 <div class="Titles">
 	<h2 class="ExerciseTitle">Arrange words to make sentences</h2>
 
-	<h3 class="ExerciseSubtitle">S&#x1EAF;p x&#x1EBF;p c&#x00E1;c t&#x1EEB; ng&#x1EEF; th&#x00E0;nh c&#x00E2;u &#x0111;&#x00FA;ng.</h3>
+	<h3 class="ExerciseSubtitle">S&#x1EAF;p x&#x1EBF;p c&#x00E1;c t&#x1EEB; ng&#x1EEF; th&#x00E0;nh c&#x00E2;u &#x0111;&#x00FA;ng</h3>
 
 
 
 </div>
 
 <div id="InstructionsDiv" class="StdDiv">
-	<div id="Instructions">Put the parts in order to form sentences. When you think your answer is correct, click on "Check" to check your answer. If you get stuck, click on "Hint" to find out the next correct part.</div>
+	<div id="Instructions">Put the parts in order to form a sentence. When you think your answer is correct, click on "Check" to check your answer. If you get stuck, click on "Hint" to find out the next correct part.</div>
 </div>
 
 <div id="ContainerDiv">
