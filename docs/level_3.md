@@ -1,3 +1,1 @@
-<title>
-  {{ page.title }}
-</title>
+{{ page.title }}
