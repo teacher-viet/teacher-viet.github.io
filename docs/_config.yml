@@ -1,4 +1,4 @@
 theme: jekyll-theme-tactile
 title: Learn Vietnamese with Bao
 description: learning through doing
-body: <a href="{{ page.url }}"/a>
+permalink: <a href="{{ page.url }}"/a>
