@@ -1,4 +1,3 @@
-% title
 <h3><center>Level 2</center></h3>
 * Lesson 1
 * Lesson 2
