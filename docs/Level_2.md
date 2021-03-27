@@ -1,4 +1,4 @@
-<h3><center>Level 2</center></h3>
+<h3><strong><center>Level 2</center></strong></h3>
 * Lesson 1
 * Lesson 2
 * Lesson 3
