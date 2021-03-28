@@ -980,7 +980,7 @@ var ShuffleQs = false;
 var ShuffleAs = false;
 var DefaultRight = 'Correct!';
 var DefaultWrong = 'Sorry! Try again.';
-var QsToShow = 2;
+var QsToShow = 3;
 var Score = 0;
 var Finished = false;
 var Qs = null;
@@ -1167,12 +1167,17 @@ I[0]=new Array();I[0][0]=100;
 I[0][1]='';
 I[0][2]='1';
 I[0][3]=new Array();
-I[0][3][0]=new Array('Ch\u00E0o ch\u1ECB. Xin l\u1ED7i, ch\u1ECB t\u00EAn l\u00E0 g\u00EC?','',1,100,1);
+I[0][3][0]=new Array('Ch\u00E0o b\u00E0 An. B\u00E0 c\u00F3 kh\u1ECFe kh\u00F4ng?','',1,100,1);
 I[1]=new Array();I[1][0]=100;
 I[1][1]='';
 I[1][2]='1';
 I[1][3]=new Array();
-I[1][3][0]=new Array('T\u00F4i t\u00EAn l\u00E0 Nam. R\u1EA5t vui \u0111\u01B0\u1EE3c g\u1EB7p ch\u1ECB.','',1,100,1);
+I[1][3][0]=new Array('Ch\u00E0o \u00F4ng T\u00E2m. T\u00F4i kh\u1ECFe. C\u00F2n \u00F4ng?','',1,100,1);
+I[2]=new Array();I[2][0]=100;
+I[2][1]='';
+I[2][2]='1';
+I[2][3]=new Array();
+I[2][3][0]=new Array('C\u1EA3m \u01A1n b\u00E0. T\u00F4i c\u0169ng kh\u1ECFe.','',1,100,1);
 
 
 function StartUp(){
@@ -1822,14 +1827,14 @@ function ShowHint(QNum){
 <div class="Titles">
 	<h2 class="ExerciseTitle">Conversation practice</h2>
 
-	<h3 class="ExerciseSubtitle">Solo practice</h3>
+	<h3 class="ExerciseSubtitle">Practise with a partner</h3>
 
 
 
 </div>
 
 <div id="InstructionsDiv" class="StdDiv">
-	<div id="Instructions">What will Nam say?<br />Practise speaking by imagining you are in a conversation with Lan.<br />You can also write down your answer in the text box to help you plan your response.<br />You can click on the play button to check your pronunciation - please note that Nam is from the North of Vietnam.</div>
+	<div id="Instructions">What will &#x00D4;ng T&#x00E2;m and B&#x00E0; An say to each other.<br />Practise speaking with a partner.<br />You can also write down your answer in the text box to help you plan your response.<br />You can click on the play button to check your pronunciation.</div>
 </div>
 
 
@@ -1841,7 +1846,7 @@ function ShowHint(QNum){
 	<div id="Reading">
 
 		<div id="ReadingDiv">
-<h3 class="ExerciseSubtitle">T&#x00EA;n t&#x00F4;i l&#x00E0; ...</h3><div class="ReadingText">Lan: Ch&#x00E0;o anh.<br /><br />Nam:<br /><audio controls="controls"><source src="1-1-n1.mp3" type="audio/mp3"/><br /><a href="1-1-n1.mp3" title="1-1-n2.mp3">click me</a><br /></audio> <br /><br />Lan: T&#x00F4;i t&#x00EA;n l&#x00E0; Lan. C&#x00F2;n anh, anh t&#x00EA;n l&#x00E0; g&#x00EC;?<br /><br />Nam: <br /><audio controls="controls"><source src="1-1-n2.mp3" type="audio/mp3"/><br /><a href="1-1-n2.mp3" title="1-1-n2.mp3">click me</a><br /></audio> <br /><br />Lan: T&#x00F4;i c&#x0169;ng r&#x1EA5;t vui &#x0111;&#x01B0;&#x1EE3;c g&#x1EB7;p anh.<br /><br /></div>
+<h3 class="ExerciseSubtitle">B&#x00E0; c&#x00F3; kh&#x1ECF;e kh&#x00F4;ng?</h3><div class="ReadingText">&#x00D4;ng T&#x00E2;m:<br /><audio controls="controls"><source src="1-2-t1.mp3" type="audio/mp3"/><br /><a href="1-2-t1.mp3" title="1-2-t1.mp3">1-2-t1.mp3</a><br /></audio> <br /><br />B&#x00E0; An:<br /><audio controls="controls"><source src="1-2-a1.mp3" type="audio/mp3"/><br /><a href="1-2-a1.mp3" title="1-2-a1.mp3">1-2-a1.mp3</a><br /></audio> <br /><br />&#x00D4;ng T&#x00E2;m:<br /><audio controls="controls"><source src="1-2-t2.mp3" type="audio/mp3"/><br /><a href="1-2-t2.mp3" title="1-2-t2.mp3">1-2-t2.mp3</a><br /></audio> </div>
 		</div>
 	</div>
 
@@ -1869,12 +1874,13 @@ function ShowHint(QNum){
 </div>
  
 <ol class="QuizQuestions" id="Questions">
-<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">Say hello and ask Lan's name</div><div class="ShortAnswer" id="Q_0_SA"><form method="post" autocomplete="off" onsubmit="return false;"><div><textarea autocomplete="off" id="Q_0_Guess" onfocus="TrackFocus('Q_0_Guess')" onblur="LeaveGap()" class="ShortAnswerBox" cols="29" rows="2"></textarea><br /><br /><button class="FuncButton" onclick="CheckShortAnswer(0)">Check</button><button class="FuncButton" onclick="ShowHint(0)">Hint</button><button class="FuncButton" onclick="ShowAnswers(0)">Show answer</button></div></form></div></li>
-<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">Answer Lan. What will you say next?</div><div class="ShortAnswer" id="Q_1_SA"><form method="post" autocomplete="off" onsubmit="return false;"><div><textarea autocomplete="off" id="Q_1_Guess" onfocus="TrackFocus('Q_1_Guess')" onblur="LeaveGap()" class="ShortAnswerBox" cols="29" rows="2"></textarea><br /><br /><button class="FuncButton" onclick="CheckShortAnswer(1)">Check</button><button class="FuncButton" onclick="ShowHint(1)">Hint</button><button class="FuncButton" onclick="ShowAnswers(1)">Show answer</button></div></form></div></li></ol>
+<li class="QuizQuestion" id="Q_0" style="display: none;"><div class="QuestionText">Greet Mrs An and ask how she is</div><div class="ShortAnswer" id="Q_0_SA"><form method="post" autocomplete="off" onsubmit="return false;"><div><textarea autocomplete="off" id="Q_0_Guess" onfocus="TrackFocus('Q_0_Guess')" onblur="LeaveGap()" class="ShortAnswerBox" cols="29" rows="2"></textarea><br /><br /><button class="FuncButton" onclick="CheckShortAnswer(0)">Check</button><button class="FuncButton" onclick="ShowHint(0)">Hint</button><button class="FuncButton" onclick="ShowAnswers(0)">Show answer</button></div></form></div></li>
+<li class="QuizQuestion" id="Q_1" style="display: none;"><div class="QuestionText">Reply to Mr T&#x00E2;m and ask him how he is.</div><div class="ShortAnswer" id="Q_1_SA"><form method="post" autocomplete="off" onsubmit="return false;"><div><textarea autocomplete="off" id="Q_1_Guess" onfocus="TrackFocus('Q_1_Guess')" onblur="LeaveGap()" class="ShortAnswerBox" cols="29" rows="2"></textarea><br /><br /><button class="FuncButton" onclick="CheckShortAnswer(1)">Check</button><button class="FuncButton" onclick="ShowHint(1)">Hint</button><button class="FuncButton" onclick="ShowAnswers(1)">Show answer</button></div></form></div></li>
+<li class="QuizQuestion" id="Q_2" style="display: none;"><div class="QuestionText">Thank Mrs An and answer her.</div><div class="ShortAnswer" id="Q_2_SA"><form method="post" autocomplete="off" onsubmit="return false;"><div><input type="text" autocomplete="off" id="Q_2_Guess" onfocus="TrackFocus('Q_2_Guess')" onblur="LeaveGap()" class="ShortAnswerBox" size="25"/><br /><br /><button class="FuncButton" onclick="CheckShortAnswer(2)">Check</button><button class="FuncButton" onclick="ShowHint(2)">Hint</button><button class="FuncButton" onclick="ShowAnswers(2)">Show answer</button></div></form></div></li></ol>
 
 
 <div id="CharacterKeypad" class="Keypad">
-<button onclick="TypeChars('\u00E0'); return false;">&#x00E0;</button> <button onclick="TypeChars('\u1EA5'); return false;">&#x1EA5;</button> <button onclick="TypeChars('\u1EB7'); return false;">&#x1EB7;</button> <button onclick="TypeChars('\u0111'); return false;">&#x0111;</button> <button onclick="TypeChars('\u00EA'); return false;">&#x00EA;</button> <button onclick="TypeChars('\u00EC'); return false;">&#x00EC;</button> <button onclick="TypeChars('\u1ECB'); return false;">&#x1ECB;</button> <button onclick="TypeChars('\u00F4'); return false;">&#x00F4;</button> <button onclick="TypeChars('\u1ED7'); return false;">&#x1ED7;</button> <button onclick="TypeChars('\u1EE3'); return false;">&#x1EE3;</button> <button onclick="TypeChars('\u01B0'); return false;">&#x01B0;</button> 
+<button onclick="TypeChars('\u00E0'); return false;">&#x00E0;</button> <button onclick="TypeChars('\u00E2'); return false;">&#x00E2;</button> <button onclick="TypeChars('\u1EA3'); return false;">&#x1EA3;</button> <button onclick="TypeChars('\u00F3'); return false;">&#x00F3;</button> <button onclick="TypeChars('\u00F2'); return false;">&#x00F2;</button> <button onclick="TypeChars('\u00F4'); return false;">&#x00F4;</button> <button onclick="TypeChars('\u1ECF'); return false;">&#x1ECF;</button> <button onclick="TypeChars('\u01A1'); return false;">&#x01A1;</button> <button onclick="TypeChars('\u0169'); return false;">&#x0169;</button> 
 </div>
 
 
