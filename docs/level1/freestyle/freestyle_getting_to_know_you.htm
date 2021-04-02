@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Richard & Bao."/><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="dc:creator" content="Richard & Bao" />
+<meta name="dc:title" content="conversation starters" />
+
+
+
+<title>
+getting to know you conversation starters
+</title>
+
+<!-- Made with executable version 7.0 Release 3 Build 0 -->
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+<h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao</a></b></h2><button onclick="window.print()">Print this page</button></center>
+
+<style>
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* BeginCorePageCSS */
+
+/* Made with executable version 7.0 Release 3 Build 0 */
+
+
+
+/* CSS variables for colours. */
+:root{
+	--strFontFace:       Geneva,Arial,sans-serif;
+	--strFontSize:       100%;
+	--strTextColor:      #0d0d0d;
+	--strTitleColor:     #303030;
+
+	--strFuncLightColor: #ffffff;
+	--strFuncShadeColor: #7f7f7f;
+	--strLinkColor:      #d5000d;
+	--strVLinkColor:     #0000cc;
+	
+	--strNavBarColor:    #000000;
+	--strNavLightColor:  #7f7f7f;
+	--strNavShadeColor:  #000000;
+	--strNavTextColor:   #ffffff;
+	
+	--strPageBGColor:    #e7e7e7;
+	--strExBGColor:      #ffffff;
+}
+
+body{
+	font-family: var(--strFontFace);
+	background-color: var(--strPageBGColor);
+	color: var(--strTextColor);
+ 
+	margin-right: 5%;
+	margin-left: 5%;
+	font-size: var(--strFontSize);
+	padding-bottom: 0.5em;
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+table,div,span,td{
+	font-size: 1em;
+	color: var(--strTextColor);
+}
+
+div.Titles{
+	padding: 0.5em;;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+button{
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: var(--strTitleColor);
+	text-align: center;
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: var(--strTitleColor);
+	text-align: center;
+}
+
+div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
+	background-color: var(--strExBGColor);
+	text-align: left;
+	font-size: 1em;
+	color: var(--strTextColor);
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: var(--strTextColor);
+	margin-bottom: 1px;
+}
+
+div.ReadingContainer, div.ExerciseContainer{
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+}
+
+div#ContainerDiv{
+	margin: -1px;
+	padding: 0;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* EndCorePageCSS */
+
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+button p.RTLText{
+	text-align: center;
+}
+
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", var(--strFontFace);
+}
+
+.Guess{
+	font-weight: bold;
+}
+
+.CorrectAnswer{
+	font-weight: bold;
+}
+
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: var(--strTitleColor);
+}
+
+span.Instructions{
+
+}
+
+div.ExerciseText{
+
+}
+
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: var(--strTitleColor);
+}
+
+.LeftItem{
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+.RightItem{
+	font-weight: bold;
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+span.CorrectMark{
+
+}
+
+input, textarea{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+}
+
+select{
+	font-size: 1em;
+}
+
+div.Feedback {
+	background-color: var(--strPageBGColor);
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+
+
+
+div.ExerciseDiv{
+	color: var(--strTextColor);
+}
+
+
+/*BeginNavBarStyle*/
+
+div.NavButtonBar{
+	background-color: var(--strNavBarColor);
+	text-align: center;
+	margin: 0.25rem 0;
+	clear: both;
+	font-size: 1em;
+	padding: 0.2em;
+	box-sizing: border-box;
+}
+
+.NavButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+	
+	border-left-color: var(--strNavLightColor);
+	border-top-color: var(--strNavLightColor);
+	border-right-color: var(--strNavShadeColor);
+	border-bottom-color: var(--strNavShadeColor); 
+	background-color: var(--strNavBarColor);
+	color: var(--strNavTextColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+}
+
+.NavButton:active {
+	box-shadow: none;
+}
+
+.NavButton:hover{
+	color: var(--strNavBarColor);
+	background-color: var(--strNavTextColor);
+}
+
+/*EndNavBarStyle*/
+
+a{
+	color: var(--strLinkColor);
+}
+
+a:visited{
+	color: var(--strVLinkColor);
+}
+
+a:hover{
+	color: var(--strLinkColor);
+}
+
+div.CardStyle {
+	position: absolute;
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 2em;
+	border-width: 1pt;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+	background-color: var(--strExBGColor);
+	left: -50px;
+	top: -50px;
+	overflow: visible;
+	touch-action: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+div.CardStyleCentered{
+	text-align: center;
+}
+
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  table-layout:fixed;
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;
+}
+
+ul.a {
+  list-style-type: circle;
+  list-style-position: outside;
+}
+
+ul.b {
+  list-style-type: square;
+  list-style-position: outside;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+  list-style-position: outside;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+  list-style-position: outside;
+}
+
+</style>
+
+</script>
+
+</head>
+
+<body onload="StartUp()" id="TheBody" >
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar" id="TopNavBar">
+
+
+<button class="NavButton" onclick="history.back(); return false;">&lt;=Back</button>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">Getting to know people</h2>
+
+	<h3 class="ExerciseSubtitle">freestyle speaking practice with a partner</h3>
+
+
+
+</div>
+
+<div id="InstructionsDiv" class="StdDiv">
+	<div id="Instructions"><center>Each person choose a speaker from the table and practice greeting/getting to know each other.</br></br>If you don't have a speaking partner, then pretend to be one of the people in the table and practice introducing yourself and some of the other people.</center></div>
+</div>
+
+<div class="ExerciseContainer">
+
+<center>
+<div style="overflow-x:auto;"><table>
+  <tr>
+    <th>name</th>
+    <th>age</th>
+    <th>occupation</th>
+    <th>place of work</th>
+    <th>nationality</th>
+    <th>marital status</th>
+    <th>partner name - age</th>
+    <th>family</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>34</td>
+    <td>engineer</td>
+    <td>Viettel company</td>
+    <td>French</td>
+    <td>married</td>
+    <td>Marie - 34</td>
+    <td>daughter - 9</br>
+daughter - 6</br>
+son - 4</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>36</td>
+    <td>teacher</td>
+    <td>Foreign Trade University in Hanoi</td>
+    <td>English</td>
+    <td>married</td>
+    <td>Anne - 28</td>
+    <td>daughter - 5</br>
+son - 2</td>
+  </tr>
+  <tr>
+    <td>Lan</td>
+    <td>36</td>
+    <td>police officer</td>
+    <td>Ho Chi Minh City</td>
+    <td>Vietnamese</td>
+    <td>married</td>
+    <td>Huy - 28</td>
+    <td>son - 2</br>
+brother - 24</td>
+  </tr>
+  <tr>
+    <td>Makoko</td>
+    <td>22</td>
+    <td>student</td>
+    <td>Vietnam National University in Hanoi</td>
+    <td>Japanese</td>
+    <td>single</td>
+    <td></td>
+    <td>mother - 58</br>
+father - 60</br>
+grandmother - 84
+sister - 24</td>
+  </tr>
+  <tr>
+    <td>Hải</td>
+    <td>36</td>
+    <td>doctor</td>
+    <td>Bạch Mai hospital</td>
+    <td>Vietnamese</td>
+    <td>married</td>
+    <td>Hoa - 33</td>
+    <td>daughter - 3</br>
+mother-in-law - 52</td>
+  </tr>
+  <tr>
+    <td>Minh</td>
+    <td>36</td>
+    <td>driver</td>
+    <td>Vũng Tàu city</td>
+    <td>Vietnamese</td>
+    <td>married</td>
+    <td>Hồng - 30</td>
+    <td>daughter - 3</br>
+father - 80</td>
+  </tr><tr>
+    <td>Sumi</td>
+    <td>36</td>
+    <td>journalist</td>
+    <td>CNN television station</td>
+    <td>Korean</td>
+    <td>partnered</td>
+    <td>Tùng - 28</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Hoa</td>
+    <td>33</td>
+    <td>teacher</td>
+    <td>primary school</td>
+    <td>Vietnamese</td>
+    <td>married</td>
+    <td>Hải - 36</td>
+    <td>daughter - 3</br>
+mother - 52</td>
+  </tr>
+</table>
+</div>
+</center>
+
+<h2>Topics and models for conversation</h2>
+
+<ul class="a">
+  <li>Meeting for the first time</li>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/1st_time.mp3" type="audio/mpeg"/>
+</audio>
+  <li>Meeting someone you know - basic greetings</li>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/basic_greeting.mp3" type="audio/mpeg"/>
+</audio>
+  <li>Finding out where people are from</li>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/where_you_from1.mp3" type="audio/mpeg"/>
+</audio>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/where_you_from2.mp3" type="audio/mpeg"/>
+</audio>
+  <li>Finding out what people do</li>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/what_you_do1.mp3" type="audio/mpeg"/>
+</audio>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/what_you_do2.mp3" type="audio/mpeg"/>
+</audio>
+  <li>Finding out about people's families</li>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/who_is_this1.mp3" type="audio/mpeg"/>
+</audio>
+  <li>Introducing yourself and others</li>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/what_I_do.mp3" type="audio/mpeg"/>
+</audio>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/where_I_from.mp3" type="audio/mpeg"/>
+</audio>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/me_friends.mp3" type="audio/mpeg"/>
+</audio>
+<audio controls>
+<source src="https://teacher-viet.github.io/level1/freestyle/my_family.mp3" type="audio/mpeg"/>
+</audio>
+</ul>
+
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+<div class="NavButtonBar" id="BottomNavBar">
+
+<button class="NavButton" onclick="history.back(); return false;">&lt;=Back</button>
+
+</div>
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+</body>
+
+</html>
