@@ -6,4 +6,9 @@
 <h4>Freestyle conversation</h4>
 * [Getting to know people](https://teacher-viet.github.io/level1/freestyle/freestyle_getting_to_know_you.htm)
 
+
+<h4>Flashcards</h4>
+* [Meeting people and making conversation](https://teacher-viet.github.io/level1/flashcards/meeting_people.htm)
+
+
 [Home](https://teacher-viet.github.io/)
