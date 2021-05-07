@@ -1,6 +1,6 @@
 <h3><center>Level 1</center></h3>
 * [Tên tôi là ...](https://teacher-viet.github.io/level1/lesson1/lesson1.htm)
-* Chị làm nghề gì?
+* [Chị làm nghề gì?](https://teacher-viet.github.io/level1/lesson2/lesson2.htm)
 * Lesson 3
 
 <h4>Freestyle conversation</h4>
