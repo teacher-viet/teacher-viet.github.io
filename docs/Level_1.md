@@ -9,7 +9,7 @@
 
 <h4>Phrase cards</h4>
 * [Meeting people and making conversation](https://teacher-viet.github.io/level1/flashcards/meeting_people.htm)
-* Expressing feelings and opinions
+* [Expressing feelings and opinions](https://teacher-viet.github.io/level1/flashcards/expressing_opinions.htm)
 
 
 [Home](https://teacher-viet.github.io/)
