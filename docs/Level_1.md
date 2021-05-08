@@ -1,7 +1,7 @@
 <h3><center>Level 1</center></h3>
 * [Tên tôi là ...](https://teacher-viet.github.io/level1/lesson1/lesson1.htm)
 * [Chị làm nghề gì?](https://teacher-viet.github.io/level1/lesson2/lesson2.htm)
-* Lesson 3
+* Tôi nghĩ ...
 
 <h4>Freestyle conversation</h4>
 * [Getting to know people](https://teacher-viet.github.io/level1/freestyle/freestyle_getting_to_know_you.htm)
@@ -9,6 +9,7 @@
 
 <h4>Flashcards</h4>
 * [Meeting people and making conversation](https://teacher-viet.github.io/level1/flashcards/meeting_people.htm)
+* Expressing feelings and opinions
 
 
 [Home](https://teacher-viet.github.io/)
