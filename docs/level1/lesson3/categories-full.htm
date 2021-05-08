@@ -28,6 +28,30 @@ Feelings, opinions and descriptions
 
 /* Made with executable version 7.0 Release 3 Build 0 */
 
+/* added by Agnès Simonet for Jmatch add-ons v2.0.3 (January 2020):
+         css variables (line 57 in hp7.cs_)
+         div.DCardStyle
+         div.DCardStyle_JMSV
+         div.FCardStyle_JMH
+         div.FCardStyle_JMS
+         div.FCardStyle_JMSV
+         div.TitleCardStyle_JMS
+         div.TitleCardStyle_JMSV
+         div.MapStyle_JMM
+         Audio Gloss style for mini audio player
+
+   modified by Agnès Simonet for Jmatch add-ons v2.0.3 (January 2020):
+         body: margin-right: 1%; margin-left: 1%; instead of 5%
+         div.CardStyle (now only used at the very beginning of the display.)
+         split of div.ExerciseContainer and div.ReadingContainer to be able to change the widths via HeaderCode
+         div.StdDiv, div.ExerciseContainer, div.ReadingContainer: border-radius: 0.5rem; added
+         div.NavButtonBar: padding: 0.4em; (instead of 0.2em to avoid the shadow to be out of the div)
+         div.ReadingContainer: max-height: 5000em; added to prevent fontboosting on touchdevices     
+   
+   added by Agnès Simonet for JMM v2.0.3 (18 January 2020)
+         div.DCardStyle_JMM
+*/
+
 
 
 /* CSS variables for colours. */
@@ -39,25 +63,50 @@ Feelings, opinions and descriptions
 
 	--strFuncLightColor: #ffffff;
 	--strFuncShadeColor: #7f7f7f;
-	--strLinkColor:      #d5000d;
-	--strVLinkColor:     #0000CC;
+	--strLinkColor:      #0000CC;
+	--strVLinkColor:     #d5000d;
 	
 	--strNavBarColor:    #000000;
 	--strNavLightColor:  #7f7f7f;
 	--strNavShadeColor:  #000000;
 	--strNavTextColor:   #ffffff;
 	
+	
 	--strPageBGColor:    #e7e7e7;
+	
+	
 	--strExBGColor:      #FFFFFF;
+	
+	
+	/* added by AS */
+	--strBorderWidth_IfDropped: 3px; /* for JMH */
+	--strBorderWidth_IfUnDropped: 1px; /* for JMH,JMM */
+	--strBorderColor_IfUnDropped: silver; /* for JMH, JMM */
+	--strBorderWidth_IfChecked: 3px; /* for JMM */
+	--strAreaBGColor: white;  /*for JMM */
+	--strAreaBorderColor: silver; /* for JMM */
+	--strMapBorderWidth: 5px; /* for JMM */
+	--strMapBorderColor: silver; /* for JMM */
+	--strMapPadding: 50px; /* for JMM */
+	--strCatTitleBGColor: gold; /* for JMS and JMSV */
+	--strCatTitleFontSize: 1.5em; /* for JMS and JMSV */
+	--strCatTitleFontWeight: bold; /* for JMS and JMSV */
+	--strCatBoxBGColor:  #FFFFFF;  /* for JMS and JMSV */
+	--strGlossColor: green;  /*for mini audio button */
+	--strGlossBGColor: gold;  /*for mini audio button */
+	
+	
 }
+
+
 
 body{
 	font-family: var(--strFontFace);
 	background-color: var(--strPageBGColor);
 	color: var(--strTextColor);
  
-	margin-right: 5%;
-	margin-left: 5%;
+	margin-right: 1%; /* original : 5% */
+	margin-left: 1%; /* original : 5% */
 	font-size: var(--strFontSize);
 	padding-bottom: 0.5em;
 }
@@ -105,14 +154,34 @@ div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
 	border-width: 1px 1px 1px 1px;
 	border-color: var(--strTextColor);
 	margin-bottom: 1px;
+	border-radius: 0.5rem;/*added by AS */
 }
 
-div.ReadingContainer, div.ExerciseContainer{
+/* AS : modification */
+/* original version :  
+div.ReadingContainer,div.ExerciseContainer{ 
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+}*/
+
+div.ReadingContainer{
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+	max-height: 5000em;/* to prevent fontboosting on touchdevices */
+}
+
+div.ExerciseContainer{
 	min-width: 15em;
 	flex-grow: 1;
 	flex-basis: 0;
 	margin: 1px;
 }
+/*AS : end of modification*/
+
 
 div#ContainerDiv{
 	margin: -1px;
@@ -565,13 +634,13 @@ div.NavButtonBar{
 	margin: 0.25rem 0;
 	clear: both;
 	font-size: 1em;
-	padding: 0.2em;
+	padding: 0.4em;/* instead of 0.2em to avoid the shadow of the button to be out of the div */
 	box-sizing: border-box;
 }
 
 .NavButton {
 	border-style: solid;
-	border-radius: 0.5em;
+	border-radius: 0.3em;
 	padding: 0.5em;
 	min-width: 3em;
 	
@@ -611,16 +680,23 @@ a:hover{
 }
 
 div.CardStyle {
+	/* to avoid display of cards before the change of class for L_n and R_n */
+	position: absolute;
+	left: -50px;
+	top: -50px;
+}
+/* AS for JMH, JMS, JMSV
+/* AS modifications: for card styles use of rem instead of em to have the same border-radius and box-shadow for the cards, regardless of the font-size  */
+div.FCardStyle_JMH, div.FCardStyle_JMS, div.FCardStyle_JMSV, div.TitleCardStyle_JMS, div.TitleCardStyle_JMSV, div.FCardStyle_JMM, div.DCardStyle, div.DCardStyle_JMSV, div.DCardStyle_JMM {
 	position: absolute;
 	font-family: var(--strFontFace);
 	font-size: 1em;
 	border-style: solid;
-	border-radius: 0.5em;
 	padding: 0.5em;
 	min-width: 2em;
 	border-width: 1pt;
 	color: var(--strTextColor);
-	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+	box-shadow: 0.2rem 0.3rem 0.2rem var(--strTextColor);/* AS : rem instead of em*/
 	background-color: var(--strExBGColor);
 	left: -50px;
 	top: -50px;
@@ -630,9 +706,154 @@ div.CardStyle {
 	box-sizing: border-box;
 }
 
+div.FCardStyle_JMH {
+	border-radius: 0.5rem;/*AS : rem instead of em*/
+	text-align: center;
+	/* for horizontal and vertical alignement
+	display:flex;
+    justify-content:center;
+    align-items:center;
+	flex-direction: column; 
+	*/
+}
+
+div.FCardStyle_JMS {
+	z-index: 60; /*AS : upon TitleCard */
+	border-radius: 0 0 0.5rem 0.5rem;/*AS : rem instead of em*/
+	background-color: var(--strCatBoxBGColor);
+	text-align: center;
+	/* for horizontal and vertical alignement
+	display:flex;
+    justify-content:center;
+    align-items:center;
+	flex-direction: column;
+	*/
+}
+
+div.TitleCardStyle_JMS {
+	z-index: 50; /*AS : under FCard to mask the bottom box-shadow*/
+	border-radius: 0.5rem 0.5rem 0 0;/*AS : rem instead of em*/
+	background-color: var(--strCatTitleBGColor);
+	font-size: var(--strCatTitleFontSize);
+	font-weight: var(--strCatTitleFontWeight);
+	text-align: center;
+}
+
+div.FCardStyle_JMSV {
+	z-index: 60; /*AS : upon TitleCard */
+	border-radius: 0 0.5rem 0.5rem 0;/*AS : rem instead of em*/
+	background-color: var(--strCatBoxBGColor);
+	text-align: center;
+	/* for vertical alignement
+	display:flex;
+    align-items:center;
+	flex-direction: column;
+	*/
+}
+
+div.TitleCardStyle_JMSV {
+	z-index: 50; /*AS : under FCard to mask the right box-shadow*/
+	border-radius: 0.5rem 0 0 0.5rem;/*AS : rem instead of em*/
+	background-color: var(--strCatTitleBGColor);
+	font-size: var(--strCatTitleFontSize);
+	font-weight: var(--strCatTitleFontWeight);
+	text-align: center;
+	/* for vertical alignement */
+	display:flex;
+    align-items:center;
+	/*flex-direction: column; */
+	
+}	
+
+div.FCardStyle_JMM {
+	border-width: 1px;
+	border-color: var(--strAreaBorderColor);
+	box-shadow: none;
+	padding: 0em;
+	text-align: center;
+	min-width: 0;
+    background-color: var(--strAreaBGColor);
+}
+	
+div.DCardStyle {
+	z-index: 70; /*AS : for "fixed" cards upon TitleCard and FCard  */
+	border-radius: 0.5rem;/*AS : rem instead of em*/
+	border-color: var(--strBorderColor_IfUnDropped);
+	text-align: center;/**/
+}
+
+div.DCardStyle_JMSV, div.DCardStyle_JMM {
+	z-index: 70; /*AS : for "fixed" cards upon TitleCard and FCard  */
+	border-radius: 0.5rem;/*AS : rem instead of em*/
+	border-color: var(--strBorderColor_IfUnDropped);
+}
+
+/* image JMM*/
+div.MapStyle_JMM {
+	position: absolute;
+	/*z-index: 100;*/
+	box-sizing: border-box;
+	font-family: var(--strFontFace);
+	/*font-family: Verdana,Geneva,Arial,sans-serif;*/
+	font-size: 100%;
+	padding: var(--strMapPadding);
+	border-style: solid;
+	border-width: var(--strMapBorderWidth);
+	border-color: var(--strMapBorderColor);
+	color: #000000;
+	opacity: 1;
+	background-color: #FFFFFF;
+	left: -500px; /* -50px; */
+	top: -500px; /* -50px; */
+	overflow: visible;
+	text-align: center;
+	/* for horizontal and vertical alignement
+	display:flex;
+    justify-content:center;
+    align-items:center;
+	flex-direction: column;  /*or : row */
+}
+
+/*unused*/
 div.CardStyleCentered{
 	text-align: center;
 }
+
+/* Audio Gloss style */
+/* for html5 audio mini button (author : Stan Bogdanov ; modified by AS) */
+
+a:link.gloss ,
+a:visited.gloss ,
+a:active.gloss {
+	display: inline-block;
+	font-family: Arial;
+	color: var(--strGlossColor);
+	background-color: var(--strGlossBGColor);
+	font-weight: bold;
+	cursor:pointer;
+	text-decoration: none;
+	border: 1px solid #777;
+	width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;  /*for JCloze */
+    border-radius: 50%;
+    padding: 0.25em;
+    text-align: center;
+}
+
+a:hover.gloss {
+	color: var(--strGlossBGColor);
+	background-color: var(--strGlossColor);
+	border: 1px solid #444; 
+}
+
+a:link.gloss ,
+a:visited.gloss ,
+a:active.gloss,
+a:hover.gloss {
+	outline: 0 none;
+}
+
 
 .rtl{
 	text-align: right;
@@ -1026,12 +1247,12 @@ function ShowItem(){
 <div class="Titles">
 	<h2 class="ExerciseTitle">Feelings, opinions and descriptions</h2>
 
-	<h3 class="ExerciseSubtitle">Flashcard exercise</h3>
+	<h3 class="ExerciseSubtitle">Matching exercise</h3>
 
 </div>
 
 <div id="InstructionsDiv" class="StdDiv">
-	<div id="Instructions">Click Next to start the exercise and choose your first card.<br />If it is English, say the Vietnamese for this word, then click Next to check your answer.<br />If it is in Vietnamese, practise saying the word and try to remember the meaning. Click Next to check your memory.<br />Click Skip to miss the card</div>
+	<div id="Instructions">Match the items on the right to the items on the left.</div>
 </div>
 
 <div id="ContainerDiv">
@@ -1042,12 +1263,12 @@ function ShowItem(){
 
 <button class="FuncButton" onclick="ShowItem()">Next</button>
 
-<button class="FuncButton" onclick="DeleteItem()">Skip</button>
+<button class="FuncButton" onclick="DeleteItem()">Delete</button>
 
 <table class="FlashcardTable" style="border-width: 0; margin-left: auto; margin-right: auto;">
 <tbody id="Questions">
 
-<tr class="FlashcardRow" id="I_0"><td id="L_0">kh&#x1ECF;e</td><td id="R_0">well</td></tr><tr class="FlashcardRow" id="I_1"><td id="L_1">m&#x1EC7;t</td><td id="R_1">tired</td></tr><tr class="FlashcardRow" id="I_2"><td id="L_2">kh&#x00E1;t</td><td id="R_2">thirsty</td></tr><tr class="FlashcardRow" id="I_3"><td id="L_3">&#x0111;&#x00F3;i</td><td id="R_3">hungry</td></tr><tr class="FlashcardRow" id="I_4"><td id="L_4">bu&#x1ED3;n</td><td id="R_4">sad</td></tr><tr class="FlashcardRow" id="I_5"><td id="L_5">vui</td><td id="R_5">happy</td></tr><tr class="FlashcardRow" id="I_6"><td id="L_6">ph&#x1EA5;n kh&#x00ED;ch</td><td id="R_6">excited</td></tr><tr class="FlashcardRow" id="I_7"><td id="L_7">lo l&#x1EAF;ng</td><td id="R_7">nervous</td></tr><tr class="FlashcardRow" id="I_8"><td id="L_8">lo &#x00E2;u</td><td id="R_8">anxious</td></tr><tr class="FlashcardRow" id="I_9"><td id="L_9">th&#x1EA5;t v&#x1ECD;ng</td><td id="R_9">disappointed</td></tr><tr class="FlashcardRow" id="I_10"><td id="L_10">m&#x1EAF;c / d&#x1EAF;t</td><td id="R_10">expensive</td></tr><tr class="FlashcardRow" id="I_11"><td id="L_11">r&#x1EBB;</td><td id="R_11">cheap</td></tr><tr class="FlashcardRow" id="I_12"><td id="L_12">hay</td><td id="R_12">interesting</td></tr><tr class="FlashcardRow" id="I_13"><td id="L_13">ch&#x00E1;n</td><td id="R_13">boring</td></tr><tr class="FlashcardRow" id="I_14"><td id="L_14">l&#x1EA1;</td><td id="R_14">strange</td></tr><tr class="FlashcardRow" id="I_15"><td id="L_15">&#x0111;&#x1EB9;p</td><td id="R_15">beautiful</td></tr><tr class="FlashcardRow" id="I_16"><td id="L_16">x&#x1EA5;u</td><td id="R_16">ugly</td></tr><tr class="FlashcardRow" id="I_17"><td id="L_17">d&#x1EC5; th&#x01B0;&#x01A1;ng</td><td id="R_17">cute</td></tr><tr class="FlashcardRow" id="I_18"><td id="L_18">xinh</td><td id="R_18">pretty</td></tr><tr class="FlashcardRow" id="I_19"><td id="L_19">no</td><td id="R_19">full</td></tr><tr class="FlashcardRow" id="I_20"><td id="L_20">t&#x1ED3;i t&#x1EC7;</td><td id="R_20">awful</td></tr><tr class="FlashcardRow" id="I_21"><td id="L_21">tuy&#x1EC7;t v&#x1EDD;i</td><td id="R_21">great</td></tr><tr class="FlashcardRow" id="I_22"><td id="L_22">l&#x1EA1;nh</td><td id="R_22">cold</td></tr><tr class="FlashcardRow" id="I_23"><td id="L_23">n&#x00F3;ng</td><td id="R_23">hot</td></tr><tr class="FlashcardRow" id="I_24"><td id="L_24">cao</td><td id="R_24">tall</td></tr><tr class="FlashcardRow" id="I_25"><td id="L_25">th&#x1EA5;p</td><td id="R_25">low</td></tr><tr class="FlashcardRow" id="I_26"><td id="L_26">m&#x00E2;p / b&#x00E9;o</td><td id="R_26">fat</td></tr><tr class="FlashcardRow" id="I_27"><td id="L_27">&#x1ED1;m / g&#x1EA7;y</td><td id="R_27">thin</td></tr><tr class="FlashcardRow" id="I_28"><td id="L_28">ngon</td><td id="R_28">delicious</td></tr><tr class="FlashcardRow" id="I_29"><td id="L_29">d&#x1ED5;</td><td id="R_29">bad tasting</td></tr><tr class="FlashcardRow" id="I_30"><td id="L_30">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</td><td id="R_30">so-so</td></tr><tr class="FlashcardRow" id="I_31"><td id="L_31">to</td><td id="R_31">big</td></tr><tr class="FlashcardRow" id="I_32"><td id="L_32">nh&#x1ECF;</td><td id="R_32">small</td></tr><tr class="FlashcardRow" id="I_33"><td id="L_33">d&#x00E0;i</td><td id="R_33">long</td></tr><tr class="FlashcardRow" id="I_34"><td id="L_34">ng&#x1EAF;n</td><td id="R_34">short</td></tr><tr class="FlashcardRow" id="I_35"><td id="L_35">r&#x1ED9;ng</td><td id="R_35">large / wide</td></tr><tr class="FlashcardRow" id="I_36"><td id="L_36">h&#x1EB9;p</td><td id="R_36">narrow</td></tr><tr class="FlashcardRow" id="I_37"><td id="L_37">n&#x00F4;ng</td><td id="R_37">shallow</td></tr><tr class="FlashcardRow" id="I_38"><td id="L_38">s&#x00E2;u</td><td id="R_38">deep</td></tr><tr class="FlashcardRow" id="I_39"><td id="L_39">&#x0111;&#x1EB9;p trai</td><td id="R_39">handsome</td></tr><tr class="FlashcardRow" id="I_40"><td id="L_40">well</td><td id="R_40">kh&#x1ECF;e</td></tr><tr class="FlashcardRow" id="I_41"><td id="L_41">tired</td><td id="R_41">m&#x1EC7;t</td></tr><tr class="FlashcardRow" id="I_42"><td id="L_42">thirsty</td><td id="R_42">kh&#x00E1;t</td></tr><tr class="FlashcardRow" id="I_43"><td id="L_43">hungry</td><td id="R_43">&#x0111;&#x00F3;i</td></tr><tr class="FlashcardRow" id="I_44"><td id="L_44">sad</td><td id="R_44">bu&#x1ED3;n</td></tr><tr class="FlashcardRow" id="I_45"><td id="L_45">happy</td><td id="R_45">vui</td></tr><tr class="FlashcardRow" id="I_46"><td id="L_46">excited</td><td id="R_46">ph&#x1EA5;n kh&#x00ED;ch</td></tr><tr class="FlashcardRow" id="I_47"><td id="L_47">nervous</td><td id="R_47">lo l&#x1EAF;ng</td></tr><tr class="FlashcardRow" id="I_48"><td id="L_48">anxious</td><td id="R_48">lo &#x00E2;u</td></tr><tr class="FlashcardRow" id="I_49"><td id="L_49">disappointed</td><td id="R_49">th&#x1EA5;t v&#x1ECD;ng</td></tr><tr class="FlashcardRow" id="I_50"><td id="L_50">expensive</td><td id="R_50">m&#x1EAF;c / d&#x1EAF;t</td></tr><tr class="FlashcardRow" id="I_51"><td id="L_51">cheap</td><td id="R_51">r&#x1EBB;</td></tr><tr class="FlashcardRow" id="I_52"><td id="L_52">interesting</td><td id="R_52">hay</td></tr><tr class="FlashcardRow" id="I_53"><td id="L_53">boring</td><td id="R_53">ch&#x00E1;n</td></tr><tr class="FlashcardRow" id="I_54"><td id="L_54">strange</td><td id="R_54">l&#x1EA1;</td></tr><tr class="FlashcardRow" id="I_55"><td id="L_55">beautiful</td><td id="R_55">&#x0111;&#x1EB9;p</td></tr><tr class="FlashcardRow" id="I_56"><td id="L_56">ugly</td><td id="R_56">x&#x1EA5;u</td></tr><tr class="FlashcardRow" id="I_57"><td id="L_57">cute</td><td id="R_57">d&#x1EC5; th&#x01B0;&#x01A1;ng</td></tr><tr class="FlashcardRow" id="I_58"><td id="L_58">pretty</td><td id="R_58">xinh</td></tr><tr class="FlashcardRow" id="I_59"><td id="L_59">full</td><td id="R_59">no</td></tr><tr class="FlashcardRow" id="I_60"><td id="L_60">awful</td><td id="R_60">t&#x1ED3;i t&#x1EC7;</td></tr><tr class="FlashcardRow" id="I_61"><td id="L_61">great</td><td id="R_61">tuy&#x1EC7;t v&#x1EDD;i</td></tr><tr class="FlashcardRow" id="I_62"><td id="L_62">cold</td><td id="R_62">l&#x1EA1;nh</td></tr><tr class="FlashcardRow" id="I_63"><td id="L_63">hot</td><td id="R_63">n&#x00F3;ng</td></tr><tr class="FlashcardRow" id="I_64"><td id="L_64">tall</td><td id="R_64">cao</td></tr><tr class="FlashcardRow" id="I_65"><td id="L_65">low</td><td id="R_65">th&#x1EA5;p</td></tr><tr class="FlashcardRow" id="I_66"><td id="L_66">fat</td><td id="R_66">m&#x00E2;p / b&#x00E9;o</td></tr><tr class="FlashcardRow" id="I_67"><td id="L_67">thin</td><td id="R_67">&#x1ED1;m / g&#x1EA7;y</td></tr><tr class="FlashcardRow" id="I_68"><td id="L_68">delicious</td><td id="R_68">ngon</td></tr><tr class="FlashcardRow" id="I_69"><td id="L_69">bad tasting</td><td id="R_69">d&#x1ED5;</td></tr><tr class="FlashcardRow" id="I_70"><td id="L_70">so-so</td><td id="R_70">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</td></tr><tr class="FlashcardRow" id="I_71"><td id="L_71">big</td><td id="R_71">to</td></tr><tr class="FlashcardRow" id="I_72"><td id="L_72">small</td><td id="R_72">nh&#x1ECF;</td></tr><tr class="FlashcardRow" id="I_73"><td id="L_73">long</td><td id="R_73">d&#x00E0;i</td></tr><tr class="FlashcardRow" id="I_74"><td id="L_74">short</td><td id="R_74">ng&#x1EAF;n</td></tr><tr class="FlashcardRow" id="I_75"><td id="L_75">large</td><td id="R_75">r&#x1ED9;ng</td></tr><tr class="FlashcardRow" id="I_76"><td id="L_76">narrow</td><td id="R_76">h&#x1EB9;p</td></tr><tr class="FlashcardRow" id="I_77"><td id="L_77">shallow</td><td id="R_77">n&#x00F4;ng</td></tr><tr class="FlashcardRow" id="I_78"><td id="L_78">deep</td><td id="R_78">s&#x00E2;u</td></tr><tr class="FlashcardRow" id="I_79"><td id="L_79">handsome</td><td id="R_79">&#x0111;&#x1EB9;p trai</td></tr>
+<tr class="FlashcardRow" id="I_0"><td id="L_0">kh&#x1ECF;e</td><td id="R_0">well</td></tr><tr class="FlashcardRow" id="I_1"><td id="L_1">m&#x1EC7;t</td><td id="R_1">tired</td></tr><tr class="FlashcardRow" id="I_2"><td id="L_2">kh&#x00E1;t</td><td id="R_2">thirsty</td></tr><tr class="FlashcardRow" id="I_3"><td id="L_3">&#x0111;&#x00F3;i</td><td id="R_3">hungry</td></tr><tr class="FlashcardRow" id="I_4"><td id="L_4">bu&#x1ED3;n</td><td id="R_4">sad</td></tr><tr class="FlashcardRow" id="I_5"><td id="L_5">vui</td><td id="R_5">happy</td></tr><tr class="FlashcardRow" id="I_6"><td id="L_6">ph&#x1EA5;n kh&#x00ED;ch</td><td id="R_6">excited</td></tr><tr class="FlashcardRow" id="I_7"><td id="L_7">lo l&#x1EAF;ng</td><td id="R_7">nervous</td></tr><tr class="FlashcardRow" id="I_8"><td id="L_8">lo &#x00E2;u</td><td id="R_8">anxious</td></tr><tr class="FlashcardRow" id="I_9"><td id="L_9">th&#x1EA5;t v&#x1ECD;ng</td><td id="R_9">disappointed</td></tr><tr class="FlashcardRow" id="I_10"><td id="L_10">m&#x1EAF;c / &#x0111;&#x1EAF;t</td><td id="R_10">expensive</td></tr><tr class="FlashcardRow" id="I_11"><td id="L_11">r&#x1EBB;</td><td id="R_11">cheap</td></tr><tr class="FlashcardRow" id="I_12"><td id="L_12">hay</td><td id="R_12">interesting</td></tr><tr class="FlashcardRow" id="I_13"><td id="L_13">ch&#x00E1;n</td><td id="R_13">boring</td></tr><tr class="FlashcardRow" id="I_14"><td id="L_14">l&#x1EA1;</td><td id="R_14">strange</td></tr><tr class="FlashcardRow" id="I_15"><td id="L_15">&#x0111;&#x1EB9;p</td><td id="R_15">beautiful</td></tr><tr class="FlashcardRow" id="I_16"><td id="L_16">x&#x1EA5;u</td><td id="R_16">ugly</td></tr><tr class="FlashcardRow" id="I_17"><td id="L_17">d&#x1EC5; th&#x01B0;&#x01A1;ng</td><td id="R_17">cute</td></tr><tr class="FlashcardRow" id="I_18"><td id="L_18">xinh</td><td id="R_18">pretty</td></tr><tr class="FlashcardRow" id="I_19"><td id="L_19">no</td><td id="R_19">full</td></tr><tr class="FlashcardRow" id="I_20"><td id="L_20">t&#x1ED3;i t&#x1EC7;</td><td id="R_20">awful</td></tr><tr class="FlashcardRow" id="I_21"><td id="L_21">tuy&#x1EC7;t v&#x1EDD;i</td><td id="R_21">great</td></tr><tr class="FlashcardRow" id="I_22"><td id="L_22">l&#x1EA1;nh</td><td id="R_22">cold</td></tr><tr class="FlashcardRow" id="I_23"><td id="L_23">n&#x00F3;ng</td><td id="R_23">hot</td></tr><tr class="FlashcardRow" id="I_24"><td id="L_24">cao</td><td id="R_24">tall</td></tr><tr class="FlashcardRow" id="I_25"><td id="L_25">th&#x1EA5;p</td><td id="R_25">low</td></tr><tr class="FlashcardRow" id="I_26"><td id="L_26">m&#x1EAD;p / b&#x00E9;o</td><td id="R_26">fat</td></tr><tr class="FlashcardRow" id="I_27"><td id="L_27">&#x1ED1;m / g&#x1EA7;y</td><td id="R_27">thin</td></tr><tr class="FlashcardRow" id="I_28"><td id="L_28">ngon</td><td id="R_28">delicious</td></tr><tr class="FlashcardRow" id="I_29"><td id="L_29">d&#x1EDF;</td><td id="R_29">bad tasting</td></tr><tr class="FlashcardRow" id="I_30"><td id="L_30">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</td><td id="R_30">so-so</td></tr><tr class="FlashcardRow" id="I_31"><td id="L_31">to</td><td id="R_31">big</td></tr><tr class="FlashcardRow" id="I_32"><td id="L_32">nh&#x1ECF;</td><td id="R_32">small</td></tr><tr class="FlashcardRow" id="I_33"><td id="L_33">d&#x00E0;i</td><td id="R_33">long</td></tr><tr class="FlashcardRow" id="I_34"><td id="L_34">ng&#x1EAF;n</td><td id="R_34">short</td></tr><tr class="FlashcardRow" id="I_35"><td id="L_35">r&#x1ED9;ng</td><td id="R_35">large / wide</td></tr><tr class="FlashcardRow" id="I_36"><td id="L_36">h&#x1EB9;p</td><td id="R_36">narrow</td></tr><tr class="FlashcardRow" id="I_37"><td id="L_37">n&#x00F4;ng</td><td id="R_37">shallow</td></tr><tr class="FlashcardRow" id="I_38"><td id="L_38">s&#x00E2;u</td><td id="R_38">deep</td></tr><tr class="FlashcardRow" id="I_39"><td id="L_39">&#x0111;&#x1EB9;p trai</td><td id="R_39">handsome</td></tr><tr class="FlashcardRow" id="I_40"><td id="L_40">well</td><td id="R_40">kh&#x1ECF;e</td></tr><tr class="FlashcardRow" id="I_41"><td id="L_41">tired</td><td id="R_41">m&#x1EC7;t</td></tr><tr class="FlashcardRow" id="I_42"><td id="L_42">thirsty</td><td id="R_42">kh&#x00E1;t</td></tr><tr class="FlashcardRow" id="I_43"><td id="L_43">hungry</td><td id="R_43">&#x0111;&#x00F3;i</td></tr><tr class="FlashcardRow" id="I_44"><td id="L_44">sad</td><td id="R_44">bu&#x1ED3;n</td></tr><tr class="FlashcardRow" id="I_45"><td id="L_45">happy</td><td id="R_45">vui</td></tr><tr class="FlashcardRow" id="I_46"><td id="L_46">excited</td><td id="R_46">ph&#x1EA5;n kh&#x00ED;ch</td></tr><tr class="FlashcardRow" id="I_47"><td id="L_47">nervous</td><td id="R_47">lo l&#x1EAF;ng</td></tr><tr class="FlashcardRow" id="I_48"><td id="L_48">anxious</td><td id="R_48">lo &#x00E2;u</td></tr><tr class="FlashcardRow" id="I_49"><td id="L_49">disappointed</td><td id="R_49">th&#x1EA5;t v&#x1ECD;ng</td></tr><tr class="FlashcardRow" id="I_50"><td id="L_50">expensive</td><td id="R_50">m&#x1EAF;c / &#x0111;&#x1EAF;t</td></tr><tr class="FlashcardRow" id="I_51"><td id="L_51">cheap</td><td id="R_51">r&#x1EBB;</td></tr><tr class="FlashcardRow" id="I_52"><td id="L_52">interesting</td><td id="R_52">hay</td></tr><tr class="FlashcardRow" id="I_53"><td id="L_53">boring</td><td id="R_53">ch&#x00E1;n</td></tr><tr class="FlashcardRow" id="I_54"><td id="L_54">strange</td><td id="R_54">l&#x1EA1;</td></tr><tr class="FlashcardRow" id="I_55"><td id="L_55">beautiful</td><td id="R_55">&#x0111;&#x1EB9;p</td></tr><tr class="FlashcardRow" id="I_56"><td id="L_56">ugly</td><td id="R_56">x&#x1EA5;u</td></tr><tr class="FlashcardRow" id="I_57"><td id="L_57">cute</td><td id="R_57">d&#x1EC5; th&#x01B0;&#x01A1;ng</td></tr><tr class="FlashcardRow" id="I_58"><td id="L_58">pretty</td><td id="R_58">xinh</td></tr><tr class="FlashcardRow" id="I_59"><td id="L_59">full</td><td id="R_59">no</td></tr><tr class="FlashcardRow" id="I_60"><td id="L_60">awful</td><td id="R_60">t&#x1ED3;i t&#x1EC7;</td></tr><tr class="FlashcardRow" id="I_61"><td id="L_61">great</td><td id="R_61">tuy&#x1EC7;t v&#x1EDD;i</td></tr><tr class="FlashcardRow" id="I_62"><td id="L_62">cold</td><td id="R_62">l&#x1EA1;nh</td></tr><tr class="FlashcardRow" id="I_63"><td id="L_63">hot</td><td id="R_63">n&#x00F3;ng</td></tr><tr class="FlashcardRow" id="I_64"><td id="L_64">tall</td><td id="R_64">cao</td></tr><tr class="FlashcardRow" id="I_65"><td id="L_65">low</td><td id="R_65">th&#x1EA5;p</td></tr><tr class="FlashcardRow" id="I_66"><td id="L_66">fat</td><td id="R_66">m&#x1EAD;p / b&#x00E9;o</td></tr><tr class="FlashcardRow" id="I_67"><td id="L_67">thin</td><td id="R_67">&#x1ED1;m / g&#x1EA7;y</td></tr><tr class="FlashcardRow" id="I_68"><td id="L_68">delicious</td><td id="R_68">ngon</td></tr><tr class="FlashcardRow" id="I_69"><td id="L_69">bad tasting</td><td id="R_69">d&#x1EDF;</td></tr><tr class="FlashcardRow" id="I_70"><td id="L_70">so-so</td><td id="R_70">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</td></tr><tr class="FlashcardRow" id="I_71"><td id="L_71">big</td><td id="R_71">to</td></tr><tr class="FlashcardRow" id="I_72"><td id="L_72">small</td><td id="R_72">nh&#x1ECF;</td></tr><tr class="FlashcardRow" id="I_73"><td id="L_73">long</td><td id="R_73">d&#x00E0;i</td></tr><tr class="FlashcardRow" id="I_74"><td id="L_74">short</td><td id="R_74">ng&#x1EAF;n</td></tr><tr class="FlashcardRow" id="I_75"><td id="L_75">large</td><td id="R_75">r&#x1ED9;ng</td></tr><tr class="FlashcardRow" id="I_76"><td id="L_76">narrow</td><td id="R_76">h&#x1EB9;p</td></tr><tr class="FlashcardRow" id="I_77"><td id="L_77">shallow</td><td id="R_77">n&#x00F4;ng</td></tr><tr class="FlashcardRow" id="I_78"><td id="L_78">deep</td><td id="R_78">s&#x00E2;u</td></tr><tr class="FlashcardRow" id="I_79"><td id="L_79">handsome</td><td id="R_79">&#x0111;&#x1EB9;p trai</td></tr>
 
 </tbody>
 </table>
