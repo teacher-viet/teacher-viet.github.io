@@ -1,0 +1,2398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Richard & Bao."/><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="dc:creator" content="Richard & Bao" />
+<meta name="dc:title" content="Feelings, opinions and descriptions: match the words to their categories" />
+
+
+<!-- Made with executable version 7.0 Release 3 Build 0 -->
+
+<!-- JMatchSort_v2.1 (for HP v7): a categorisation type of exercise with drag&drop 
+	 by Agnès Simonet, July 2020
+     Thanks to Stan Bogdanov et Glenys Hanson✝ for their support and help for the first version of Horizontal JMatch Sort.
+-->
+
+<title>
+Feelings, opinions and descriptions: match the words to their categories
+</title>
+
+<!-- djmatch7.ht_ modified by Agnès Simonet - July 2020
+	HTML5 audio :
+    	* hiddenPlayer added for audio - line 84 in djmatch7.ht_ 
+    	* player4.js loaded - line 42 in djmatch7.ht_
+	"strHeaderCode" moved below "strStyleSheet" - line 38 in djmatch7.ht_ , to be able to modify a style via "strHeaderCode"
+-->
+
+<!-- AS : original place for "strHeaderCode" -->
+
+
+<style>
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* BeginCorePageCSS */
+
+/* Made with executable version 7.0 Release 3 Build 0 */
+
+/* added by Agnès Simonet for Jmatch add-ons v2.0.3 (January 2020):
+         css variables (line 57 in hp7.cs_)
+         div.DCardStyle
+         div.DCardStyle_JMSV
+         div.FCardStyle_JMH
+         div.FCardStyle_JMS
+         div.FCardStyle_JMSV
+         div.TitleCardStyle_JMS
+         div.TitleCardStyle_JMSV
+         div.MapStyle_JMM
+         Audio Gloss style for mini audio player
+
+   modified by Agnès Simonet for Jmatch add-ons v2.0.3 (January 2020):
+         body: margin-right: 1%; margin-left: 1%; instead of 5%
+         div.CardStyle (now only used at the very beginning of the display.)
+         split of div.ExerciseContainer and div.ReadingContainer to be able to change the widths via HeaderCode
+         div.StdDiv, div.ExerciseContainer, div.ReadingContainer: border-radius: 0.5rem; added
+         div.NavButtonBar: padding: 0.4em; (instead of 0.2em to avoid the shadow to be out of the div)
+         div.ReadingContainer: max-height: 5000em; added to prevent fontboosting on touchdevices     
+   
+   added by Agnès Simonet for JMM v2.0.3 (18 January 2020)
+         div.DCardStyle_JMM
+*/
+
+
+
+/* CSS variables for colours. */
+:root{
+	--strFontFace:       Geneva,Arial,sans-serif;
+	--strFontSize:       100%;
+	--strTextColor:      #0d0d0d;
+	--strTitleColor:     #303030;
+
+	--strFuncLightColor: #ffffff;
+	--strFuncShadeColor: #7f7f7f;
+	--strLinkColor:      #d5000d;
+	--strVLinkColor:     #0000CC;
+	
+	--strNavBarColor:    #000000;
+	--strNavLightColor:  #7f7f7f;
+	--strNavShadeColor:  #000000;
+	--strNavTextColor:   #ffffff;
+	
+	
+	--strPageBGColor:    #e7e7e7;
+	
+	
+	--strExBGColor:      #FFFFFF;
+	
+	
+	/* added by AS */
+	--strBorderWidth_IfDropped: 3px; /* for JMH */
+	--strBorderWidth_IfUnDropped: 1px; /* for JMH,JMM */
+	--strBorderColor_IfUnDropped: silver; /* for JMH, JMM */
+	--strBorderWidth_IfChecked: 3px; /* for JMM */
+	--strAreaBGColor: white;  /*for JMM */
+	--strAreaBorderColor: silver; /* for JMM */
+	--strMapBorderWidth: 5px; /* for JMM */
+	--strMapBorderColor: silver; /* for JMM */
+	--strMapPadding: 50px; /* for JMM */
+	--strCatTitleBGColor: gold; /* for JMS and JMSV */
+	--strCatTitleFontSize: 1.5em; /* for JMS and JMSV */
+	--strCatTitleFontWeight: bold; /* for JMS and JMSV */
+	--strCatBoxBGColor:  #FFFFFF;  /* for JMS and JMSV */
+	--strGlossColor: green;  /*for mini audio button */
+	--strGlossBGColor: gold;  /*for mini audio button */
+	
+	
+}
+
+
+
+body{
+	font-family: var(--strFontFace);
+	background-color: var(--strPageBGColor);
+	color: var(--strTextColor);
+ 
+	margin-right: 1%; /* original : 5% */
+	margin-left: 1%; /* original : 5% */
+	font-size: var(--strFontSize);
+	padding-bottom: 0.5em;
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+table,div,span,td{
+	font-size: 1em;
+	color: var(--strTextColor);
+}
+
+div.Titles{
+	padding: 0.5em;;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+button{
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: var(--strTitleColor);
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: var(--strTitleColor);
+}
+
+div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
+	background-color: var(--strExBGColor);
+	text-align: center;
+	font-size: 1em;
+	color: var(--strTextColor);
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: var(--strTextColor);
+	margin-bottom: 1px;
+	border-radius: 0.5rem;/*added by AS */
+}
+
+/* AS : modification */
+/* original version :  
+div.ReadingContainer,div.ExerciseContainer{ 
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+}*/
+
+div.ReadingContainer{
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+	max-height: 5000em;/* to prevent fontboosting on touchdevices */
+}
+
+div.ExerciseContainer{
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+}
+/*AS : end of modification*/
+
+
+div#ContainerDiv{
+	margin: -1px;
+	padding: 0;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* EndCorePageCSS */
+
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+button p.RTLText{
+	text-align: center;
+}
+
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", var(--strFontFace);
+}
+
+.Guess{
+	font-weight: bold;
+}
+
+.CorrectAnswer{
+	font-weight: bold;
+}
+
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: var(--strTitleColor);
+}
+
+span.Instructions{
+
+}
+
+div.ExerciseText{
+
+}
+
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: var(--strTitleColor);
+}
+
+.LeftItem{
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+.RightItem{
+	font-weight: bold;
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+span.CorrectMark{
+
+}
+
+input, textarea{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+}
+
+select{
+	font-size: 1em;
+}
+
+div.Feedback {
+	background-color: var(--strPageBGColor);
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+
+
+
+div.ExerciseDiv{
+	color: var(--strTextColor);
+}
+
+/* JMatch standard output table. */
+table.MatchTable{
+	margin: 2em auto; 
+	border-width: 0;
+}
+
+/* JMatch flashcard styles */
+table.FlashcardTable{
+	background-color: transparent;
+	color: var(--strTextColor);
+	border-color: var(--strTextColor);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	/*width: 90%;*/
+	position: relative;
+	text-align: center;
+	padding: 0px;
+}
+
+table.FlashcardTable tr{
+	border-style: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--strExBGColor);
+}
+
+table.FlashcardTable td.Showing{
+	font-size: 140%;
+	text-align: center;
+	width: 50%;
+	display: table-cell;
+	padding: 2em;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+	background-color: var(--strPageBGColor);
+}
+
+table.FlashcardTable td.Hidden{
+	display: none;
+}
+
+/* JMix styles */
+div.JMixDrag, div.JMatchDrag{
+	padding: 0;
+	background-color: var(--strPageBGColor);
+	border-style: none;
+}
+
+div#GuessDiv{
+	padding: 0.5em;
+	margin-bottom: 2em;
+}
+
+div#SegmentDiv{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+a.ExSegment{
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--strTextColor);
+	display: inline-block;
+	padding: 0.5em;
+	border: solid 1pt gray;
+	margin-bottom: 0.5em;
+}
+
+span.RemainingWordList{
+	font-style: italic;
+}
+
+div.DropLine {
+	position: absolute;
+	text-align: left;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--strTitleColor);
+	width: 80%;
+	left: 10%;
+}
+
+/* JCloze styles */
+
+.ClozeWordList{
+	text-align: center;
+	font-weight: bold;
+}
+
+div.ClozeBody{
+	text-align: left;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: 2.0
+}
+
+span.GapSpan{
+	font-weight: bold;
+}
+
+/* JCross styles */
+
+table.CrosswordGrid{
+	margin: auto auto 1em auto;
+	border-collapse: collapse;
+	padding: 0px;
+	background-color: #000000;
+}
+
+table.CrosswordGrid tbody tr td{
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 140%;
+	padding: 1px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid span{
+	color: #000000;
+}
+
+table.CrosswordGrid td.BlankCell{
+	background-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid td.LetterOnlyCell{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+table.CrosswordGrid td.NumLetterCell{
+	text-align: left;
+	vertical-align: top;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 1px;
+	font-weight: bold;
+}
+
+.NumLetterCellText{
+	cursor: pointer;
+	color: #000000;
+}
+
+.GridNum{
+	vertical-align: super;
+	font-size: 66%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.GridNum:hover, .GridNum:visited{
+	color: #000000;
+}
+
+table#Clues{
+	margin: auto;
+	vertical-align: top;
+}
+
+table#Clues td{
+	vertical-align: top;
+}
+
+table.ClueList{
+  margin: auto;
+}
+
+td.ClueNum{
+	text-align: right;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.Clue{
+	text-align: left;
+}
+
+div#ClueEntry{
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+/* Keypad styles */
+
+div.Keypad{
+	text-align: center;
+	display: none; /* initially hidden, shown if needed */
+	margin-bottom: 0.5em;
+}
+
+div.Keypad button{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+	background-color: #ffffff;
+	color: #000000;
+	width: 2em;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+}
+
+/* JQuiz styles */
+
+div.QuestionNavigation{
+	text-align: center;
+}
+
+.QNum{
+	margin: 0em 1em 0.5em 1em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+textarea{
+	font-family: var(--strFontFace);
+}
+
+.QuestionText{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+.Answer{
+	font-size: 120%;
+}
+
+.PartialAnswer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+	color: var(--strTitleColor);
+}
+
+.Highlight{
+	color: #000000;
+	background-color: #ffff00;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+ol.QuizQuestions{
+	text-align: left;
+	list-style-type: none;
+}
+
+li.QuizQuestion{
+	padding: 1em;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+}
+
+ol.MCAnswers{
+	text-align: left;
+	list-style-type: upper-alpha;
+	padding: 1em;
+}
+
+ol.MCAnswers li{
+	margin-bottom: 1em;
+}
+
+ol.MSelAnswers{
+	text-align: left;
+	list-style-type: lower-alpha;
+	padding: 1em;
+}
+
+div.ShortAnswer{
+	padding: 1em;
+}
+
+.FuncButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+
+	border-left-color: var(--strFuncLightColor);
+	border-top-color: var(--strFuncLightColor);
+	border-right-color: var(--strFuncShadeColor);
+	border-bottom-color: var(--strFuncShadeColor);
+	color: var(--strTextColor);
+	background-color: var(--strExBGColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strFuncShadeColor);
+}
+
+.FuncButton:active {
+	box-shadow: none;
+}
+
+.FuncButton:hover{
+	color: var(--strExBGColor);
+	background-color: var(--strTextColor);
+}
+
+/*BeginNavBarStyle*/
+
+div.NavButtonBar{
+	background-color: var(--strNavBarColor);
+	text-align: center;
+	margin: 0.25rem 0;
+	clear: both;
+	font-size: 1em;
+	padding: 0.4em;/* instead of 0.2em to avoid the shadow of the button to be out of the div */
+	box-sizing: border-box;
+}
+
+.NavButton {
+	border-style: solid;
+	border-radius: 0.3em;
+	padding: 0.5em;
+	min-width: 3em;
+	
+	border-left-color: var(--strNavLightColor);
+	border-top-color: var(--strNavLightColor);
+	border-right-color: var(--strNavShadeColor);
+	border-bottom-color: var(--strNavShadeColor); 
+	background-color: var(--strNavBarColor);
+	color: var(--strNavTextColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+}
+
+.NavButton:active {
+	box-shadow: none;
+}
+
+.NavButton:hover{
+	color: var(--strNavBarColor);
+	background-color: var(--strNavTextColor);
+}
+
+/*EndNavBarStyle*/
+
+a{
+	color: var(--strLinkColor);
+}
+
+a:visited{
+	color: var(--strVLinkColor);
+}
+
+a:hover{
+	color: var(--strLinkColor);
+}
+
+div.CardStyle {
+	/* to avoid display of cards before the change of class for L_n and R_n */
+	position: absolute;
+	left: -50px;
+	top: -50px;
+}
+/* AS for JMH, JMS, JMSV
+/* AS modifications: for card styles use of rem instead of em to have the same border-radius and box-shadow for the cards, regardless of the font-size  */
+div.FCardStyle_JMH, div.FCardStyle_JMS, div.FCardStyle_JMSV, div.TitleCardStyle_JMS, div.TitleCardStyle_JMSV, div.FCardStyle_JMM, div.DCardStyle, div.DCardStyle_JMSV, div.DCardStyle_JMM {
+	position: absolute;
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	border-style: solid;
+	padding: 0.5em;
+	min-width: 2em;
+	border-width: 1pt;
+	color: var(--strTextColor);
+	box-shadow: 0.2rem 0.3rem 0.2rem var(--strTextColor);/* AS : rem instead of em*/
+	background-color: var(--strExBGColor);
+	left: -50px;
+	top: -50px;
+	overflow: visible;
+	touch-action: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+div.FCardStyle_JMH {
+	border-radius: 0.5rem;/*AS : rem instead of em*/
+	text-align: center;
+	/* for horizontal and vertical alignement
+	display:flex;
+    justify-content:center;
+    align-items:center;
+	flex-direction: column; 
+	*/
+}
+
+div.FCardStyle_JMS {
+	z-index: 60; /*AS : upon TitleCard */
+	border-radius: 0 0 0.5rem 0.5rem;/*AS : rem instead of em*/
+	background-color: var(--strCatBoxBGColor);
+	text-align: center;
+	/* for horizontal and vertical alignement
+	display:flex;
+    justify-content:center;
+    align-items:center;
+	flex-direction: column;
+	*/
+}
+
+div.TitleCardStyle_JMS {
+	z-index: 50; /*AS : under FCard to mask the bottom box-shadow*/
+	border-radius: 0.5rem 0.5rem 0 0;/*AS : rem instead of em*/
+	background-color: var(--strCatTitleBGColor);
+	font-size: var(--strCatTitleFontSize);
+	font-weight: var(--strCatTitleFontWeight);
+	text-align: center;
+}
+
+div.FCardStyle_JMSV {
+	z-index: 60; /*AS : upon TitleCard */
+	border-radius: 0 0.5rem 0.5rem 0;/*AS : rem instead of em*/
+	background-color: var(--strCatBoxBGColor);
+	text-align: center;
+	/* for vertical alignement
+	display:flex;
+    align-items:center;
+	flex-direction: column;
+	*/
+}
+
+div.TitleCardStyle_JMSV {
+	z-index: 50; /*AS : under FCard to mask the right box-shadow*/
+	border-radius: 0.5rem 0 0 0.5rem;/*AS : rem instead of em*/
+	background-color: var(--strCatTitleBGColor);
+	font-size: var(--strCatTitleFontSize);
+	font-weight: var(--strCatTitleFontWeight);
+	text-align: center;
+	/* for vertical alignement */
+	display:flex;
+    align-items:center;
+	/*flex-direction: column; */
+	
+}	
+
+div.FCardStyle_JMM {
+	border-width: 1px;
+	border-color: var(--strAreaBorderColor);
+	box-shadow: none;
+	padding: 0em;
+	text-align: center;
+	min-width: 0;
+    background-color: var(--strAreaBGColor);
+}
+	
+div.DCardStyle {
+	z-index: 70; /*AS : for "fixed" cards upon TitleCard and FCard  */
+	border-radius: 0.5rem;/*AS : rem instead of em*/
+	border-color: var(--strBorderColor_IfUnDropped);
+	text-align: center;/**/
+}
+
+div.DCardStyle_JMSV, div.DCardStyle_JMM {
+	z-index: 70; /*AS : for "fixed" cards upon TitleCard and FCard  */
+	border-radius: 0.5rem;/*AS : rem instead of em*/
+	border-color: var(--strBorderColor_IfUnDropped);
+}
+
+/* image JMM*/
+div.MapStyle_JMM {
+	position: absolute;
+	/*z-index: 100;*/
+	box-sizing: border-box;
+	font-family: var(--strFontFace);
+	/*font-family: Verdana,Geneva,Arial,sans-serif;*/
+	font-size: 100%;
+	padding: var(--strMapPadding);
+	border-style: solid;
+	border-width: var(--strMapBorderWidth);
+	border-color: var(--strMapBorderColor);
+	color: #000000;
+	opacity: 1;
+	background-color: #FFFFFF;
+	left: -500px; /* -50px; */
+	top: -500px; /* -50px; */
+	overflow: visible;
+	text-align: center;
+	/* for horizontal and vertical alignement
+	display:flex;
+    justify-content:center;
+    align-items:center;
+	flex-direction: column;  /*or : row */
+}
+
+/*unused*/
+div.CardStyleCentered{
+	text-align: center;
+}
+
+/* Audio Gloss style */
+/* for html5 audio mini button (author : Stan Bogdanov ; modified by AS) */
+
+a:link.gloss ,
+a:visited.gloss ,
+a:active.gloss {
+	display: inline-block;
+	font-family: Arial;
+	color: var(--strGlossColor);
+	background-color: var(--strGlossBGColor);
+	font-weight: bold;
+	cursor:pointer;
+	text-decoration: none;
+	border: 1px solid #777;
+	width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;  /*for JCloze */
+    border-radius: 50%;
+    padding: 0.25em;
+    text-align: center;
+}
+
+a:hover.gloss {
+	color: var(--strGlossBGColor);
+	background-color: var(--strGlossColor);
+	border: 1px solid #444; 
+}
+
+a:link.gloss ,
+a:visited.gloss ,
+a:active.gloss,
+a:hover.gloss {
+	outline: 0 none;
+}
+
+
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+
+</style>
+
+
+<!-- AS : new place for <h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao </a></b></h2><button onclick="window.print()">Print this page</button></center> -->
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+<h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao </a></b></h2><button onclick="window.print()">Print this page</button></center>
+
+<!-- for audio button -->
+<!-- if player4.js and the htm exercice are in the same folder -->
+<script src="player4.js"></script>
+<!-- end of addition by Agnès Simonet -->
+
+<script>
+
+//<![CDATA[
+
+<!--
+
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+function FocusAButton(){
+	if (document.getElementById('CheckButton1') != null){
+		document.getElementById('CheckButton1').focus();
+	}
+	else{
+		if (document.getElementById('CheckButton2') != null){
+			document.getElementById('CheckButton2').focus();
+		}
+		else{
+			document.getElementsByTagName('button')[0].focus();
+		}
+	}
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+	var Output = Feedback + '<br /><br />';
+	document.getElementById('FeedbackContent').innerHTML = Output;
+	var FDiv = document.getElementById('FeedbackDiv');
+	topZ++;
+	FDiv.style.zIndex = topZ;
+	FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+	FDiv.style.display = 'block';
+
+	ShowElements(false, 'input');
+	ShowElements(false, 'select');
+	ShowElements(false, 'object');
+	ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+	setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+	
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+	//get container object (by Id passed in, or use document otherwise)
+	TopNode = document.getElementById(ContainerToReverse);
+	var Els;
+	if (TopNode != null) {
+		Els = TopNode.getElementsByTagName(TagName);
+	} else {
+		Els = document.getElementsByTagName(TagName);
+	}
+
+	for (var i=0; i<Els.length; i++){
+		if (TagName == "object") {
+			//manipulate object elements in all browsers
+			if (Show == true){
+				Els[i].style.visibility = 'visible';
+			}
+			else{
+				Els[i].style.visibility = 'hidden';
+			}
+		} 
+	}
+}
+
+
+
+function HideFeedback(){
+	document.getElementById('FeedbackDiv').style.display = 'none';
+	ShowElements(true, 'input');
+	ShowElements(true, 'select');
+	ShowElements(true, 'object');
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	this.W = document.getElementsByTagName('body')[0].offsetWidth;
+	this.H = document.getElementsByTagName('body')[0].offsetHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+	var XY = {x: 0, y: 0};
+	while(El){
+		XY.x += El.offsetLeft;
+		XY.y += El.offsetTop;
+		El = El.offsetParent;
+	}
+	return XY;
+}
+
+function GetScrollTop(){
+	if (typeof(window.pageYOffset) == 'number'){
+		return window.pageYOffset;
+	}
+	else{
+		if ((document.body)&&(document.body.scrollTop)){
+			return document.body.scrollTop;
+		}
+		else{
+			if ((document.documentElement)&&(document.documentElement.scrollTop)){
+				return document.documentElement.scrollTop;
+			}
+			else{
+				return 0;
+			}
+		}
+	}
+}
+
+function GetViewportHeight(){
+	if (typeof window.innerHeight != 'undefined'){
+		return window.innerHeight;
+	}
+	else{
+		if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+			return document.documentElement.clientHeight;
+		}
+		else{
+			return document.getElementsByTagName('body')[0].clientHeight;
+		}
+	}
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+	var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+	return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+	if (InTextBox == true){return;}
+	thisKey = e.keyCode;
+
+	var Suppress = false;
+
+	if (thisKey == 8) {
+		Suppress = true;
+		e.preventDefault();
+	}
+}
+
+window.addEventListener('keypress',SuppressBackspace,false);
+
+function ReduceItems(InArray, ReduceToSize){
+	var ItemToDump=0;
+	var j=0;
+	while (InArray.length > ReduceToSize){
+		ItemToDump = Math.floor(InArray.length*Math.random());
+		InArray.splice(ItemToDump, 1);
+	}
+}
+
+function Shuffle(InArray){
+	var Num;
+	var Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < (j-1); k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+	document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+	return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+	if (InArray.length < 1){return -1;}
+
+	var Longest = 0;
+	for (var i=1; i<InArray.length; i++){
+		if (InArray[i].length > InArray[Longest].length){
+			Longest = i;
+		}
+	}
+	return Longest;
+}
+
+//SELECTION OBJECT FOR TYPING WITH KEYPAD
+var selObj = null;
+            
+SelObj = function(box){
+	this.box = box;
+	this.selStart = this.box.selectionStart;
+	this.selEnd = this.box.selectionEnd;
+	this.selText = this.box.value.substring(this.selStart, this.selEnd);
+	return this;
+}
+
+function setSelText(newText){
+	var caretPos = this.selStart + newText.length;
+	var newValue = this.box.value.substring(0, this.selStart);
+	newValue += newText;
+	newValue += this.box.value.substring(this.selEnd, this.box.value.length);
+	this.box.value = newValue;
+	this.box.setSelectionRange(caretPos, caretPos);
+	this.box.focus();
+}
+SelObj.prototype.setSelText = setSelText;
+
+function setSelSelectionRange(start, end){
+	this.box.setSelectionRange(start, end);
+}
+SelObj.prototype.setSelSelectionRange = setSelSelectionRange;
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+	var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+	Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+	return Result;
+}
+
+function IsCJK(CharNum){
+	return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+	var NList = document.getElementsByTagName('input');
+	for (var i=0; i<NList.length; i++){
+		if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+			NList[i].value = '';
+		}
+		if (NList[i].id.indexOf('Chk') > -1){
+			NList[i].checked = '';
+		}
+	}
+}
+
+
+
+
+
+//Polyfill for old Safari versions.
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
+
+
+//JMATCH-SPECIFIC CORE JAVASCRIPT CODE
+
+//Work around Safari bug
+var scrollable = true;
+
+var listener = function(e) {
+    if (! scrollable) {
+        e.preventDefault();
+    }
+}
+
+document.addEventListener('touchmove', listener, { passive:false });
+
+// ***********************************
+// variables
+// ***********************************
+
+// ------------------------------------
+// variables : valeurs modifiables ; you can modify these variable values
+// ------------------------------------
+// entre les cartes d'une ligne
+// between fixed cards on a row
+var spacerH = 10;
+
+// entre cartes mobiles placées
+// between dropped items
+var spacerV_DRIC_DRIC = 5;
+
+// entre le sommet de la carte fixe et la 1ere carte mobile placée
+// between the top of the fixed card and the first dropped cards
+var spacerV_FIC_DRIC1 = 5;
+
+// entre le bas de la carte fixe et la 1ere ligne de cartes mobiles
+// between the bottom of the fixed card and the first line of droppable cards
+var spacerV_FIC_RIC = 10;
+
+// entre le div des boutons et les cartes fixes (1ère ligne)
+// between the button div and the first cards
+var spacerV_topButtonDiv_TIC = 10;
+
+// entre les lignes des cartes mobiles à placer (si plusieurs lignes)
+// between the lines of draggable items (if several lines)
+var spacerV_RIC_RIC = 10;
+
+// entre le bas de l'exercice ou du reading text et la barre de navigation du bas
+// beetween the lowest of exercice or reading text and the bottom navbar
+var spacerV_bottomNavbar = 30;
+
+// rab pour la hauteur des boites de catégories si non définie dans one
+// extra for the height of categories (if undefined in one)
+var rab_LIC_Std = 0;
+
+// ------------------------------------
+// strUserDefined
+// ------------------------------------
+// one : 
+// rab pour la hauteur des boites de catégories
+// extra for the height of categories
+var rab_LIC = 'one';
+
+// two : 
+// taille des caractères du texte des RIC
+// fontsize for DC text 
+var RIC_fontSize = 'two';
+
+// 1 : Auto Highlight 
+	// 1 : mode apprentissage (auto coloration) - 0 ou rien : mode test (pas d'auto coloration)
+	// 1 : practice mode (auto highlight) - 0 or void : test mode (no auto highlight)
+ var autoHighlight = '1'; 
+
+// ------------------------------------
+// variables globales initialisation
+// ------------------------------------
+var CorrectResponse = 'Correct! Well done.';
+var IncorrectResponse = 'Sorry! Try again. ';
+var YourScoreIs = 'Your score is ';
+var FeedbackWidth = 200; //default
+var ExBGColor = getComputedStyle(document.documentElement).getPropertyValue('--strExBGColor');
+var PageBGColor = getComputedStyle(document.documentElement).getPropertyValue('--strPageBGColor');
+var TextColor = getComputedStyle(document.documentElement).getPropertyValue('--strTextColor');
+var TitleColor = getComputedStyle(document.documentElement).getPropertyValue('--strTitleColor');
+var LinkColor = getComputedStyle(document.documentElement).getPropertyValue('--strLinkColor');
+var VLinkColor = getComputedStyle(document.documentElement).getPropertyValue('--strVLinkColor');
+var Penalties = 0;
+var Score = 0;
+var TimeOver = false;
+var Locked = false;
+var ShuffleQs = true;
+var QsToShow = 0;
+var ResizeTimer = null;
+
+var LeftColPos = 100;
+var RightColPos = 500;
+var DragTop = 120;
+var Finished = false;
+var AnswersTried = '';
+
+// draggable cards RIC
+// cartes mobiles RIC
+var DSOffsetV = 0;// vertical offset of drop-shadow
+var DSOffsetH = 0;// horizontal offset of drop-shadow
+
+
+//Fixed and draggable card arrays
+// utile ?
+FC = new Array();
+DC = new Array();
+
+// ***********************************
+// drag
+// ***********************************
+var DraggingCard = null;
+/*
+// e.preventDefault() prevents a click on a link (audio button) on touch devices
+// no problem on PC
+var moveFunc = function(e){e.preventDefault(); doDrag(e)};
+var endFunc = function(e){e.preventDefault(); endDrag(e)};
+*/
+
+var moveFunc = function(e){doDrag(e)};
+var endFunc = function(e){endDrag(e)};
+
+function beginDrag(e, Card){
+	scrollable = false;
+	DraggingCard = Card;
+	DraggingCard.Highlight();
+	window.addEventListener('mousemove',  moveFunc);
+	window.addEventListener('mouseup',    endFunc);
+	window.addEventListener('touchmove',  moveFunc);
+	window.addEventListener('touchend',   endFunc);
+	var currX, currY;
+	if (e.touches){
+		currX = e.touches[0].clientX;
+		currY = e.touches[0].clientY;
+	}
+	else{
+		currX = e.clientX;
+		currY = e.clientY; 
+	}
+
+	topZ++;
+	DraggingCard.style.zIndex = topZ;
+	window.lastX = currX; 
+	window.lastY = currY;
+	return false;  
+} 
+
+
+function doDrag(e) {
+	var currX, currY;
+	var difX, difY;
+	if (e.touches){
+		currX = e.touches[0].clientX;
+		currY = e.touches[0].clientY;
+	}
+	else{
+		currX = e.clientX;
+		currY = e.clientY; 
+	}
+	
+	difX = currX - window.lastX; 
+	difY = currY - window.lastY;
+	DraggingCard.style.left = DraggingCard.GetL() + difX + 'px'; 
+	DraggingCard.style.top  = DraggingCard.GetT() + difY + 'px'; 
+	window.lastX = currX; 
+	window.lastY = currY; 
+	return false;
+} 
+
+function endDrag(e) { 
+	DraggingCard.Unhighlight();
+	window.removeEventListener('mousemove', moveFunc);
+	window.removeEventListener('touchmove', moveFunc);
+	window.removeEventListener('mouseup', endFunc);
+	window.removeEventListener('touchend', endFunc);
+	onEndDrag();
+	scrollable = true;	
+	return true;
+} 
+
+function onEndDrag(){ 
+	DraggingOrigPos = parseInt(DraggingCard.getAttribute('id').substring(2));
+	DragEx.HandleDrop(DraggingOrigPos);
+	DraggingCard = null;
+} 
+
+// ***********************************
+// Utility functions for dimensions of elements.
+// ***********************************
+var GetL = function(){
+	return this.offsetLeft;
+}
+var GetR = function(){
+	return this.offsetLeft + this.offsetWidth;
+}
+var GetT = function(){
+	return this.offsetTop;
+}
+var GetB = function(){
+	return this.offsetTop + this.offsetHeight;
+}
+var GetH = function(){
+	return this.offsetHeight;
+}
+var GetW = function(){
+	return this.offsetWidth;
+}
+var Highlight = function(){
+	this.style.backgroundColor = TextColor;
+	this.style.color = ExBGColor;
+};
+var Unhighlight = function(){
+	this.style.backgroundColor = ExBGColor;
+	this.style.color = TextColor;
+};
+var GetOverlap = function(OtherCard){
+	var smR=(this.GetR() < OtherCard.GetR())? this.GetR(): OtherCard.GetR();
+	var lgL=(this.GetL() > OtherCard.GetL())? this.GetL(): OtherCard.GetL();
+	var HDim=smR-lgL;
+	if (HDim<1){return 0;}
+	var smB=(this.GetB() < OtherCard.GetB())? this.GetB(): OtherCard.GetB();
+	var lgT=(this.GetT() > OtherCard.GetT())? this.GetT(): OtherCard.GetT();
+	var VDim=smB-lgT;
+	if (VDim<1){return 0;}
+	return (HDim*VDim);	
+};
+
+// added by Agnès Simonet
+var HighlightIfWrong = function(){
+	this.style.backgroundColor = VLinkColor;
+	this.style.color = TextColor;
+};
+var HighlightIfRight = function(){
+	this.style.backgroundColor = LinkColor;
+	this.style.color = TextColor;
+};
+// end of addition
+/*
+  The new V7 DragEx object replaces the arrays of old.
+*/
+var V7JsonEx = '{  "ShuffleLeftItems": true,  "IsSimple": false,  "ItemsToShow": -1,  "LeftItems": [{"OrigPos": 0,     "Group": 0}, {"OrigPos": 1,     "Group": 0}, {"OrigPos": 2,     "Group": 0}, {"OrigPos": 3,     "Group": 0}, {"OrigPos": 4,     "Group": 1}, {"OrigPos": 5,     "Group": 1}, {"OrigPos": 6,     "Group": 1}, {"OrigPos": 7,     "Group": 1}, {"OrigPos": 8,     "Group": 2}, {"OrigPos": 9,     "Group": 2}, {"OrigPos": 10,     "Group": 2}, {"OrigPos": 11,     "Group": 2}, {"OrigPos": 12,     "Group": 2}, {"OrigPos": 13,     "Group": 3}, {"OrigPos": 14,     "Group": 3}, {"OrigPos": 15,     "Group": 3}, {"OrigPos": 16,     "Group": 3}, {"OrigPos": 17,     "Group": 3}, {"OrigPos": 18,     "Group": 3}, {"OrigPos": 19,     "Group": 3}, {"OrigPos": 20,     "Group": 3}],  "RightItems": [{"OrigPos": 0,     "Groups": [0], "MatchedWith": -1}, {"OrigPos": 1,     "Groups": [0], "MatchedWith": -1}, {"OrigPos": 2,     "Groups": [0], "MatchedWith": -1}, {"OrigPos": 3,     "Groups": [0], "MatchedWith": -1}, {"OrigPos": 4,     "Groups": [1], "MatchedWith": -1}, {"OrigPos": 5,     "Groups": [1], "MatchedWith": -1}, {"OrigPos": 6,     "Groups": [1], "MatchedWith": -1}, {"OrigPos": 7,     "Groups": [1], "MatchedWith": -1}, {"OrigPos": 8,     "Groups": [2], "MatchedWith": -1}, {"OrigPos": 9,     "Groups": [2], "MatchedWith": -1}, {"OrigPos": 10,     "Groups": [2], "MatchedWith": -1}, {"OrigPos": 11,     "Groups": [2], "MatchedWith": -1}, {"OrigPos": 12,     "Groups": [2], "MatchedWith": -1}, {"OrigPos": 13,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 14,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 15,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 16,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 17,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 18,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 19,     "Groups": [3], "MatchedWith": -1}, {"OrigPos": 20,     "Groups": [3], "MatchedWith": -1}]}';
+
+
+var DragEx = JSON.parse(V7JsonEx); //analyse la chaîne V7JsonEx pour créer son objet.
+
+
+
+// *************************************
+//       Methods for the object.
+// *************************************
+
+//----------------------
+//     setup
+//----------------------
+// LI (LeftItems) : categories
+// RI (RightItems) : draggable items
+// TI (TitleItems) : category headings
+
+DragEx.Setup = function(){
+	var i;
+	
+
+
+
+
+
+
+// AS : mini audio button
+// transformation of the audio tag with data-audio="mini"
+// into <a href="javascript:void(0);" onclick="play('mysound.mp3');"class="gloss">&#9658;</a>
+// for compatibility with the old syntax (HP v6)
+
+	var audioels = document.querySelectorAll('audio');
+	for (i = 0; i<audioels.length; i++){
+		var audioel = audioels[i];
+		// rechercher le data-audio
+		if ( audioel.hasAttribute('data-audio')) {
+			// récupérer le nom du fichier audio
+			var sourcel = audioel.firstElementChild;// si personne n'a idée de modifier l'audio tag...
+			if(sourcel.nodeName ="source" || "SOURCE") {var srcfilename =sourcel.getAttribute('src');}
+			// definition du remplaçant
+			var lien = document.createElement("a");
+			lien.setAttribute("href","javascript:void(0);");
+			lien.setAttribute("class","gloss");
+			lien.innerHTML = "&#9658;";
+			lien.setAttribute("onclick","play('"+srcfilename+"');");
+			// remplacement
+			var audioparent = audioel.parentNode;
+			audioparent.replaceChild(lien, audioel);
+		}	
+	}
+
+//Add custom functions to all the cards.
+	document.querySelectorAll('div.CardStyle').forEach(function(div){
+		div.Highlight = Highlight.bind(div);
+		div.Unhighlight = Unhighlight.bind(div);
+		// added by Agnès Simonet
+		div.HighlightIfWrong = HighlightIfWrong.bind(div);
+		div.HighlightIfRight = HighlightIfRight.bind(div);
+		// end of addition
+		div.GetL = GetL.bind(div);
+		div.GetT = GetT.bind(div);
+		div.GetR = GetR.bind(div);
+		div.GetB = GetB.bind(div);
+		div.GetH = GetH.bind(div);
+		div.GetW = GetW.bind(div);
+		div.GetOverlap = GetOverlap.bind(div);
+	}.bind(this));
+
+//Connect each of the items to its card.
+	this.LeftItems.forEach(function(LI){
+		LI.Card = document.getElementById('L_' + LI.OrigPos);
+	}.bind(this));
+	this.RightItems.forEach(function(RI){
+		RI.Card = document.getElementById('R_' + RI.OrigPos);
+		RI.Card.addEventListener('mousedown',  (function(e){beginDrag(e, this)}.bind(RI.Card)));
+		RI.Card.addEventListener('touchstart', (function(e){beginDrag(e, this)}.bind(RI.Card)));
+		RI.Card.style.cursor = 'grab';
+	}.bind(this));
+	
+// AS : change LI.Card class
+	this.LeftItems.forEach(function(LI){
+		LI.Card = document.getElementById('L_' + LI.OrigPos);
+		LI.Card.className = 'FCardStyle_JMS';
+	}.bind(this));
+	
+// AS : change RI.Card class
+	this.RightItems.forEach(function(RI){
+		RI.Card = document.getElementById('R_' + RI.OrigPos);
+		RI.Card.className = 'DCardStyle';
+	}.bind(this));
+
+		
+// AS : Get the value of any drop-shadow on the LI and RI cards so we can allow for it in layout.
+// supposing drop-shadow is the same for LI and RI
+	var elRIC = document.querySelector('div.DCardStyle');
+	var DS =  window.getComputedStyle(elRIC).getPropertyValue("box-shadow");// rgb(0, 0, 102) 16,32,3.2,0px
+	DS = DS.split(')');// sépare la donnée de couleur des données en px : rgb(0, 0, 102, 16px 32px 3.2px 0px
+	if (DS.length > 1) {DS = DS[1].split('px ');}//16, 32, 3.2, 0px
+	if ((DS.length > 1)&&(!(Number.isNaN(parseFloat(DS[0]))))){
+		DSOffsetH = Math.abs(Math.ceil(parseFloat(DS[0])));
+	}
+	if ((DS.length > 1)&&(!(Number.isNaN(parseFloat(DS[1]))))){
+		DSOffsetV = Math.abs(Math.ceil(parseFloat(DS[1])));
+	}
+
+//Reduce the items as required. Sanity check: don't allow less than 2.
+// il vaudrait mieux réduire les catégories
+// todo : au moins deux catégories
+	if (this.ItemsToShow > 1){
+		while (this.LeftItems.length > this.ItemsToShow){
+			RemItem = Math.floor(this.LeftItems.length*Math.random());
+			OP = this.LeftItems[RemItem].OrigPos;
+			this.LeftItems[RemItem].Card.parentNode.removeChild(this.LeftItems[RemItem].Card);
+			this.LeftItems.splice([RemItem], 1);
+			//Having removed an item from the left, we must remove the corresponding 
+			//one from the right if it exists. (There may not be a matching item if 
+			//the one removed was a distractor.)
+			for (i = 0; i < this.RightItems.length; i++){
+				if (this.RightItems[i].OrigPos == OP){
+					this.RightItems[i].Card.parentNode.removeChild(this.RightItems[i].Card);
+					this.RightItems.splice(i, 1);
+				}
+			}
+		}
+	}
+
+// AS : keep a copy of the original left items
+// voir Object.assign ?
+// utile pour identifier les RI distractors
+	this.OriginalLeftItems = []; 
+	for (i = 0; i < this.LeftItems.length; i++){
+		this.OriginalLeftItems[this.OriginalLeftItems.length] = {OrigPos:this.LeftItems[i].OrigPos, Group:this.LeftItems[i].Group};
+	}
+
+// AS : add an array for RIs in LI
+	this.LeftItems.forEach(function(LI){
+		LI.MatchedWith=[]; // quels RI dans LI
+
+	}.bind(this));
+
+// AS : Reduce the left items for categories
+// il faudrait éviter le cas où il n'y aurait plus qu'une catégorie	
+	for (i = 0; i < this.LeftItems.length; i++) {
+		for (var q = 0; q < i; q++) {
+			if (this.LeftItems[q].Group == this.LeftItems[i].Group){
+				this.LeftItems[i].Card.parentNode.removeChild(this.LeftItems[i].Card);
+				// adapt RI.MatchedWith ("fix" items) 
+				for (var m = 0; m < this.RightItems.length; m++) {
+					if (this.RightItems[m].MatchedWith == this.LeftItems[i].OrigPos) {	
+						this.RightItems[m].MatchedWith = this.LeftItems[q].OrigPos;
+					}
+				}
+				this.LeftItems.splice([i], 1);
+				i--;
+			}
+		}
+	}
+
+//Now do any shuffling that's required.
+	if (this.ShuffleLeftItems == true){
+		this.LeftItems = Shuffle(this.LeftItems);
+	}	
+	this.RightItems = Shuffle(this.RightItems);
+
+// AS : create a TitleItems property of DragEx and divs for titles
+	this.TitleItems = [];
+	for (i = 0; i < this.LeftItems.length; i++) {
+		var textTitle = this.LeftItems[i].Card.innerHTML;
+		LI_OP = this.LeftItems[i].OrigPos;
+		this.TitleItems[this.TitleItems.length] = {OrigPos:LI_OP, TextTitle:textTitle};
+		
+		var TitleDiv = document.createElement("div");
+		TitleDiv.className = 'TitleCardStyle_JMS';
+		TitleDiv.innerHTML = textTitle ;
+		TitleDiv.setAttribute("id", 'T_'+LI_OP);
+		document.body.insertBefore(TitleDiv, document.getElementById('L_0'));
+		
+	}
+
+// AS : Add custom functions to TitleDiv cards.	
+	document.querySelectorAll('div.TitleCardStyle_JMS').forEach(function(div){
+		div.GetL = GetL.bind(div);
+		div.GetT = GetT.bind(div);
+		div.GetR = GetR.bind(div);
+		div.GetB = GetB.bind(div);
+		div.GetH = GetH.bind(div);
+		div.GetW = GetW.bind(div);
+	}.bind(this));	
+	
+// AS : Connect each of the TitleItems to its card.
+	this.TitleItems.forEach(function(CT){
+		CT.Card = document.getElementById('T_' + CT.OrigPos);
+	}.bind(this));	
+	
+// AS : remove the text of LICards
+		for (i = 0; i < this.LeftItems.length; i++) {
+			this.LeftItems[i].Card.innerHTML = "";
+		}
+
+//Fix to avoid image dragging problem in cards with images.
+	var DragImgs = document.querySelectorAll('div.DCardStyle img');
+	for (i = 0; i<DragImgs.length; i++){
+		DragImgs[i]. onmousedown = function(){return false;}
+	}
+//AS : Fix to avoid dragging problem in cards with audio link.
+	var DragAudioLink = document.querySelectorAll('div.DCardStyle a');
+	for (i = 0; i<DragAudioLink.length; i++){
+		DragAudioLink[i]. onmousedown = function(){return false;}
+	}
+
+// Mettre tout en place (y compris les "fix") la première fois
+	this.SetInitialPositions(true);
+	
+// Remettre tout en place (positions courantes) en cas de resize ou de feedback (CheckAnswers)
+//We use a timeout here to allow card positions to be established
+//before they're used for sliding matched cards.
+	window.addEventListener('resize', function(e){
+		clearTimeout(ResizeTimer);
+		ResizeTimer = setTimeout(function(){DragEx.SetInitialPositions(false)}, 250); // en cas de resize ou feedback
+	});
+
+	
+
+};
+
+//----------------------
+//  end of setup
+//----------------------
+
+//----------------------
+// GetLeftItemByOrigPos
+//----------------------
+DragEx.GetLeftItemByOrigPos = function(Pos){
+	for (var i=0; i<this.LeftItems.length; i++){
+		if (this.LeftItems[i].OrigPos === Pos){
+			return this.LeftItems[i];
+		}
+	}
+	return null;
+};
+
+//----------------------
+// AS : GetOriginalLeftItemByOrigPos
+//----------------------
+DragEx.GetOriginalLeftItemByOrigPos = function(Pos){
+	for (var i=0; i<this.OriginalLeftItems.length; i++){
+		if (this.OriginalLeftItems[i].OrigPos === Pos){
+			return this.OriginalLeftItems[i];
+		}
+	}
+	return null;
+};
+//----------------------
+// GetRightItemByOrigPos
+//----------------------
+DragEx.GetRightItemByOrigPos = function(Pos){
+	for (var i=0; i<this.RightItems.length; i++){
+		if (this.RightItems[i].OrigPos === Pos){
+			return this.RightItems[i];
+		}
+	}
+	return null;
+};
+//----------
+// SendHome
+//----------
+DragEx.SendHome = function(ROrigPos){
+	this.GetRightItemByOrigPos(ROrigPos).Card.Unhighlight();
+	Slide(ROrigPos, this.GetRightItemByOrigPos(ROrigPos).Home);
+	
+};
+
+//--------------------
+// SetInitialPositions
+//--------------------
+DragEx.SetInitialPositions = function(slide){
+	
+	var ExDiv = document.querySelector('div.ExerciseContainer');
+
+// --------------------------------------	
+//Calculate container dimensions and positions
+	DragTop = parseInt(document.getElementById('CheckButtonDiv').offsetHeight) + parseInt(document.getElementById('CheckButtonDiv').offsetTop) + spacerV_topButtonDiv_TIC;
+	
+	var ExDivLeft = ExDiv.offsetLeft;
+	var ExDivWidth = ExDiv.offsetWidth;	
+	LeftColPos = ExDivLeft;
+	
+	var WidestLIC = 0;
+	var HighestLIC = 0;
+	var HighestAllLIC = 0;
+	var HighestRIC = 0;
+	var WidestRIC = 0;
+	var WidestTIC = 0;
+	var HighestTIC = 0;
+	var WidestRICTIC = 0;
+	var CurrCard = this.LeftItems[0].Card;
+	var CurrTop = DragTop;
+	var CurrLeft = LeftColPos;
+	var NumRow = 1;
+	var w=0;
+	var i=0; j=0; k=0;
+	
+// --------------------------------------
+//Calculate the width and height for the fixed cards (categories).	
+
+	for (i=0; i<this.LeftItems.length; i++){
+		CurrCard = this.LeftItems[i].Card;
+		CurrCard.style.width = '';
+		CurrCard.style.height = '';
+		// AS : can't understand why we add 10...
+		var w = CurrCard.GetW() + 10; // for a pb with ios and edge ?
+		if (w > WidestLIC){
+			WidestLIC = w;
+		}
+		if (CurrCard.GetH() > HighestLIC){
+			HighestLIC = CurrCard.GetH();
+		}
+	}
+	
+// --------------------------------------
+//Calculate the width and height for the draggable cards according to RIC_fontSize.	
+	for (i=0; i<this.RightItems.length; i++){
+		CurrCard = this.RightItems[i].Card;
+		// fontsize (strUserDefined2)
+		CurrCard.style.fontSize = RIC_fontSize;
+
+		//width and height
+		CurrCard.style.width = '';
+		CurrCard.style.height = '';
+		if (CurrCard.GetH() > HighestRIC){HighestRIC = CurrCard.GetH();}
+		if (CurrCard.GetW() > WidestRIC){WidestRIC = CurrCard.GetW();}
+	}
+	
+// --------------------------------------
+// AS : Calculate the width and height of the title cards.
+	for (i=0; i<this.TitleItems.length; i++){
+		CurrCard = this.TitleItems[i].Card;
+		CurrCard.style.width = '';
+		CurrCard.style.height = '';
+		// highest
+		CurrCard.style.height = '';
+		if (CurrCard.GetH() > HighestTIC){HighestTIC = CurrCard.GetH();}
+		// widest
+		// AS : can't understand why we add 10...
+		var z = CurrCard.GetW() + 10; // for a pb with ios and edge ?
+		if (z > WidestTIC){
+			WidestTIC = z;
+		}
+		/*
+		// AS
+		CurrCard.style.width = '';
+		if (CurrCard.GetW() > WidestTIC){WidestTIC = CurrCard.GetW();}
+		*/
+	}
+
+// --------------------------------------
+// AS : //Size and position of the title cards.
+	CurrTop = DragTop;
+	CurrLeft = LeftColPos;
+	NumRow = 1;
+
+	WidestRICTIC = Math.max((WidestRIC+ 2*spacerH  + DSOffsetH), WidestTIC);
+	for (i=0; i<this.TitleItems.length; i++){
+		CurrCard = this.TitleItems[i].Card;
+		// position
+		CurrCard.style.top = CurrTop + 'px';
+		CurrCard.style.left = CurrLeft + 'px';
+		CurrCard.style.width = WidestRICTIC + 'px';
+		CurrCard.style.height = HighestTIC + 'px';
+		// position for the next card
+		CurrLeft = CurrLeft + (WidestRICTIC + DSOffsetH) + spacerH;
+	}
+
+
+	// centering
+	CenterRow(this.TitleItems, 0, ExDivWidth)
+	
+// --------------------------------------	
+// AS : calcul de la hauteur totale des RIC corrects pour chaque LIC
+// et de la hauteur finale des LIC
+	
+	LI = this.LeftItems;
+	RI = this.RightItems;
+	
+	for (i=0; i<LI.length; i++){
+		HighestLIC = spacerV_FIC_DRIC1;
+		for (j=0; j<RI.length; j++){
+			if (RI[j].Groups.indexOf(LI[i].Group) > -1){ 
+				HighestLIC = HighestLIC + RI[j].Card.GetH() + (spacerV_DRIC_DRIC + DSOffsetV);
+			}
+			// la plus grande valeur
+			if (HighestLIC  > HighestAllLIC ) {HighestAllLIC = HighestLIC}; 
+		}
+		// prise en compte du rab one
+		if ((isNaN(rab_LIC)) || rab_LIC=='' ) {rab_LIC = rab_LIC_Std;} // si non définie dans strUserDefined1
+		else {rab_LIC = parseInt(rab_LIC,10) ;}
+		HighestAllLIC = HighestAllLIC + rab_LIC;
+	}
+
+// --------------------------------------
+//Size and position of the fixed cards (categories).
+	CurrTop = DragTop + HighestTIC;
+	CurrLeft = LeftColPos;
+	NumRow = 1;
+	for (i=0; i<this.LeftItems.length; i++){
+		CurrCard = this.LeftItems[i].Card;
+		
+		//  minimum width : WidestRICTIC
+		if (CurrCard.GetW() < WidestRICTIC){CurrCard.style.width = WidestRICTIC + 'px';}
+		// position
+		CurrCard.style.top = CurrTop + 'px';
+		CurrCard.style.left = CurrLeft + 'px';
+		CurrCard.style.height = HighestAllLIC + 'px';	
+		// position for the next card
+		CurrLeft = CurrLeft + (WidestRICTIC + DSOffsetH) + spacerH;	
+	}
+	
+	// centering
+	CenterRow(this.LeftItems, 0, ExDivWidth)
+
+// --------------------------------------
+//Size and position of the draggable cards.		
+	CurrLeft = LeftColPos;
+	CurrTop = CurrTop + HighestAllLIC + (spacerV_FIC_RIC + DSOffsetV);
+	NumRow= 1;
+	
+	for (i=0; i<this.RightItems.length; i++){
+		CurrCard = this.RightItems[i].Card;
+		// position with no centering
+			// does it stay within the div? if not, new row
+		if ( (CurrLeft + CurrCard.GetW() )>=(ExDivLeft + ExDivWidth) )
+		{	CurrLeft = LeftColPos; 
+			CurrTop = CurrTop + HighestRIC  + spacerV_RIC_RIC;
+			NumRow ++;
+		}
+			// stock the row of the draggable card
+		this.RightItems[i].Row = NumRow;		
+			// position
+		CurrCard.style.top = CurrTop + 'px';
+		CurrCard.style.left = CurrLeft + 'px'; 
+		
+			// position for the next card
+		CurrLeft = CurrLeft + CurrCard.GetW() + spacerH; 
+	}
+	
+	// centering
+	CenterRow(this.RightItems, 0, ExDivWidth)
+	
+	// stock of the initial positions
+	for (i=0; i<this.RightItems.length; i++)
+	{
+		this.RightItems[i].Home = [this.RightItems[i].Card.GetL(), this.RightItems[i].Card.GetT()];
+	}
+
+// --------------------------------------
+//Now we clone the top navbar to create a bottom	
+//navbar, and position it.
+	var TopNav = document.getElementById('TopNavBar');
+	var ReadingDiv = document.getElementById('ReadingDiv');
+	
+	if (TopNav !== null){
+
+	//First delete one if there is one.
+		// modified by Agnes Simonet for JMS
+		var BottomNav = document.getElementById('BottomNavBar');
+		if (BottomNav === null){
+			BottomNav = document.getElementById('TopNavBar').cloneNode(true);
+			BottomNav.setAttribute('id', 'BottomNavBar');
+			BottomNav.style.position = 'absolute';
+			document.body.appendChild(BottomNav);
+		}
+		//position
+		var LowestRIC = 0;
+		for (i=0; i<this.RightItems.length; i++) {
+			if (this.RightItems[i].Card.GetB() > LowestRIC) {LowestRIC = this.RightItems[i].Card.GetB();}
+		}
+		var ReadingBottom = (ReadingDiv)? ReadingDiv.offsetTop + ReadingDiv.offsetHeight : 0;
+		BottomNav.style.top = (Math.max(ReadingBottom + spacerV_bottomNavbar, LowestRIC + spacerV_bottomNavbar ) ) + 'px' ;
+		BottomNav.style.width = document.getElementById('TopNavBar').offsetWidth + 'px';
+	}
+
+// --------------------------------------	
+//Now slide (place) any already-matched items into position.
+	this.RightItems.forEach(function(RI){
+		if (RI.MatchedWith > -1){
+			if (slide == true){ //1ère install de l'exercice
+				var LeftItem = this.GetLeftItemByOrigPos(RI.MatchedWith);		
+				// calcul de la hauteur occupée par les RI précédents dans le LI
+				var height_RIs_in_LI = 0;
+				for ( k=0 ; k<LeftItem.MatchedWith.length ; k++) {
+					var RIinLI_OrigPos = LeftItem.MatchedWith[k];
+					var RIinLI = this.GetRightItemByOrigPos(RIinLI_OrigPos);
+					height_RIs_in_LI = height_RIs_in_LI + RIinLI.Card.GetH() + (spacerV_DRIC_DRIC + DSOffsetV);
+				}
+				// mettre le "fix" dans la liste des RI de LI (s'il n'y est pas déjà)
+				if (LeftItem.MatchedWith.indexOf(RI.OrigPos) == -1){
+					LeftItem.MatchedWith.push(RI.OrigPos);
+				}
+			
+				//slide
+				var TargPoint = this.GetDockPoint(RI.MatchedWith, RI.Card);
+					// pour le cas où il y aurait plusieurs fix dans le même LI
+				TargPoint[1] = TargPoint[1] + height_RIs_in_LI;
+				Slide(RI.OrigPos, TargPoint);	// mise en place en douceur
+			}
+			
+			else{ // en cas de redimensionnement ou de feedback (donc de checkanswers)
+				this.Rearrange_RIs_in_LI(RI.MatchedWith);
+
+				
+			}
+		}
+	}.bind(this));
+};
+
+//--------------------
+// End of SetInitialPositions
+//--------------------
+/**/
+
+
+//-------------
+// GetDockPoint
+// modified by Agnès Simonet for JMS
+//-------------
+DragEx.GetDockPoint = function(LeftOrigPos, RightCard){
+	var TargL, TargT;
+	var LeftItem = this.GetLeftItemByOrigPos(LeftOrigPos);
+	if (LeftItem !== null){
+		var LeftCard = LeftItem.Card;
+		TargL = LeftCard.GetL() + spacerH;
+		TargT = LeftCard.GetT()  + spacerV_FIC_DRIC1;
+		return [TargL, TargT];
+	}
+	else{
+		return [0,0];
+	}
+}
+
+//-------------
+// Rearrange_RIs_in_LI
+// AS : to rearrange the dropped cards in a category
+
+DragEx.Rearrange_RIs_in_LI = function(LOrigPos){
+	var LI = this.GetLeftItemByOrigPos(LOrigPos);
+	var newtop = LI.Card.GetT() + spacerV_FIC_DRIC1 ;
+	for (var k=0; k<LI.MatchedWith.length; k++) { 
+		var RI_OrigPos = LI.MatchedWith[k];
+		var RI = this.GetRightItemByOrigPos(RI_OrigPos);
+		RI.Card.style.top = newtop+'px';
+		RI.Card.style.left = LI.Card.GetL() + spacerH +'px';
+		newtop = newtop + RI.Card.GetH() + (spacerV_DRIC_DRIC+ DSOffsetV) ;
+		if (autoHighlight == '1' ){	AutoHighlightRIC(RI);}
+	}
+}
+
+//-------------
+// HandleDrop
+//-------------
+DragEx.HandleDrop = function(ROrigPos){	
+	var RI = this.GetRightItemByOrigPos(ROrigPos);
+	var prev_LI_OrigPos = RI.MatchedWith;// où était-il ?
+	RI.MatchedWith = -1;
+	RI.Card.Unhighlight();
+	var Overlap = 0;
+	var MatchedWithLI = -1;
+	var i,j;
+
+	// quel LI est-ce qu'il overlappe le plus (-->MatchedWithLI)
+	this.LeftItems.forEach(function(LI){
+		var OL = RI.Card.GetOverlap(LI.Card);
+		if (OL > Overlap){ 
+			Overlap = OL;
+			MatchedWithLI = LI.OrigPos;// la plus overlappée des L
+		}
+	}.bind(this));
+
+	if (MatchedWithLI > -1){ // pour le RI qui overlappe
+		// stocker avec quel LI
+		RI.MatchedWith = MatchedWithLI;	
+		// le mettre dans la liste du LI après avoir vérifié qu'il n'y etait pas déjà
+		var LI = this.GetLeftItemByOrigPos(MatchedWithLI);
+		if (LI.MatchedWith.indexOf(ROrigPos) == -1) {
+			LI.MatchedWith.push(ROrigPos);
+		}
+		// le placer
+		this.Rearrange_RIs_in_LI(RI.MatchedWith);
+	}
+	else { // droppé en-dehors des LI
+		this.SendHome(ROrigPos);
+	}
+	
+	// s'il venait d'un autre LI
+		if ( (prev_LI_OrigPos>-1) && (prev_LI_OrigPos !== RI.MatchedWith ) ) {
+			var prev_LI = this.GetLeftItemByOrigPos(prev_LI_OrigPos);
+			// suppression de la liste
+			for (j=0; j<prev_LI.MatchedWith.length; j++) {
+				if (prev_LI.MatchedWith[j] == ROrigPos) {
+					prev_LI.MatchedWith.splice(j,1);
+				}	
+			}
+			// réarrangement de la liste d'origine
+			this.Rearrange_RIs_in_LI(prev_LI_OrigPos);
+		}
+}
+//-------------
+// CheckAnswers
+//-------------
+//This function checks answers and calculates the 
+//current score, then returns true for "finished" or
+//false for "not yet finished". The object's Score
+//property can then be read.
+DragEx.CheckAnswers = function(){
+/*
+	Check each right item to see whether a) it had an 
+	original match on the left, and b) it is matched
+	to a left item whose group is one of its groups.
+*/
+	if (!this.hasOwnProperty('Penalties')){
+		this.Penalties = 0;
+	}
+	var ItemsToCount = 0;
+	var CorrectItems = 0;
+	var Done = true; //Assume till proven otherwise.
+	
+//Tot up the scores.
+	this.RightItems.forEach(function(RI){
+	//Only use it if there is a match for it.
+	
+	// for JMatchSort use OriginalLeftItems
+		if (this.GetOriginalLeftItemByOrigPos(RI.OrigPos) !== null){ // not a distractor pb if a duplicate RI is not a distractor
+			ItemsToCount++;
+			if (RI.MatchedWith !== -1){ // pour les RI placés
+				var LI = this.GetLeftItemByOrigPos(RI.MatchedWith);
+				if (RI.Groups.indexOf(LI.Group) > -1){ // si correctement placés
+
+					CorrectItems++;
+					RI.Card.HighlightIfRight();
+				}
+				else{ // si incorrectement placés
+					Done = false;
+					RI.Card.HighlightIfWrong();
+				}
+			}
+			else{
+				Done = false;
+			}
+		}
+		else{
+	//It's a distractor and shouldn't be matched. Deduct one from score.
+			if (RI.MatchedWith !== -1){
+				Done = false;
+				RI.Card.HighlightIfWrong();
+				CorrectItems--;
+			}
+			else {
+				RI.Card.HighlightIfRight();	
+			}
+		}
+		
+	}.bind(this));
+	if (!this.hasOwnProperty('Score')){
+		this.Score = 0;
+	}
+	this.Score = Math.round((100*(CorrectItems - this.Penalties))/ItemsToCount);
+	if (Done === false){
+		this.Penalties++;
+	}
+	return Done;
+};
+
+
+// *************************************
+//     End of methods for the object
+// *************************************
+
+// *************************************
+//               Functions
+// *************************************
+//-------------
+//function Slide
+//-------------
+function Slide(ROrigPos, TargPoint){
+// modified by Agnès Simonet for JMS
+	var CurrentRightItem = DragEx.GetRightItemByOrigPos(ROrigPos);
+	var Card = DragEx.GetRightItemByOrigPos(ROrigPos).Card;
+	
+	if (Math.abs(Card.GetT() - TargPoint[1]) <= 5){ // si top à moins de 5 de la cible
+		Card.style.top = TargPoint[1] + 'px'; //  mettre top en place
+	}
+	else{ // le décaler de + ou -5 vers le haut 
+		var TopShift = Card.GetT() < TargPoint[1]? 5: -5; // TopShift =-5 ou +5 selon que la carte est en-dessous ou au-dessus de la cible
+		Card.style.top = Card.GetT() + TopShift + 'px';
+	}
+	if (Card.GetL() !== TargPoint[0]){ // si à droite ou à gauche de FC (centrage inclu)
+		if (Math.abs(Card.GetL() - TargPoint[0]) <= 5){ //si left à moins de 5 de la cible
+			Card.style.left = TargPoint[0] + 'px';// mettre left en place
+		}
+		else{ // le décaler de + ou -5 vers la gauche
+			var LeftShift = Card.GetL() < TargPoint[0]? 5: -5; // LeftShift =-5 ou +5 selon que la carte est à droite ou à gauche de la cible
+			Card.style.left = Card.GetL() + LeftShift + 'px';
+		}
+	}
+	if ((Card.GetL() != TargPoint[0])||(Card.GetT() != TargPoint[1])){ // si pas en place
+		setTimeout('Slide(' + ROrigPos + ', [' + TargPoint[0] + ',' + TargPoint[1] + '])', 1); // recommencer
+	}
+	else {	 // s'il est en place
+		if (autoHighlight == '1' ){	AutoHighlightRIC(CurrentRightItem);}
+		
+	}
+}
+//-------------
+//function TimerStartUp
+//-------------
+function TimerStartUp(){
+	setTimeout('DragEx.Setup()', 300);
+}
+
+//-------------
+//function CheckAnswers
+//-------------
+function CheckAnswers(){
+	if (Locked == true){return;}
+	
+	var Feedback = '';
+
+	var AllDone = DragEx.CheckAnswers();
+	Score = DragEx.Score;
+	if (Score < 0){Score = 0;}
+
+	if (AllDone == true){
+		Feedback = YourScoreIs + ' ' + Score + '%.<br/>' + CorrectResponse;
+	}
+	else {
+		if (TimeOver == true){
+			Feedback = YourScoreIs + ' ' + Score + '%.'
+		}
+		else{
+			Feedback = YourScoreIs + ' ' + Score + '%.' + '<br />' + IncorrectResponse;
+		}
+	}
+	ShowMessage(Feedback);
+	
+//If the exercise is over, deal with that
+	if ((AllDone == true)||(TimeOver == true)){
+
+
+		TimeOver = true;
+		Locked = true;
+		Finished = true;
+		WriteToInstructions(Feedback);
+	}
+
+	
+//The window layout may be affected by the feedback, so 
+//put the cards in place again.
+	DragEx.SetInitialPositions(false);
+}
+
+
+
+// *************************************
+//   Functions added by Agnès Simonet
+// *************************************
+
+function CenterRow(Items, idx_first_on_row, ExDivWidth)
+// Author : Michael Rottmeier, adapted by Agnès Simonet for JMH and JMS
+{ 
+	var indentation = 0 ;
+	var row_width = 0 ;
+	var idx_next_first = idx_first_on_row;
+	var CurrRow = Items[idx_next_first].Row ;
+		while( (idx_next_first < Items.length) && (Items[idx_next_first].Row === CurrRow) )
+		{	
+			idx_next_first++;
+		}
+
+		//calculation of indentation
+		row_width = Items[idx_next_first -1].Card.GetR() - Items[idx_first_on_row].Card.GetL() ;
+		indentation = Math.floor( (ExDivWidth - row_width)/2 );
+		if (indentation <0) {indentation=0;}
+		// center row
+		for (var k=idx_first_on_row; k<idx_next_first; k++)
+		{	
+			Items[k].Card.style.left= (Items[k].Card.GetL() + indentation) + 'px' ;
+		}
+
+		// next row
+		if (idx_next_first < Items.length)
+		{
+			CenterRow(Items, idx_next_first, ExDivWidth)	
+		}	
+
+}
+
+function AutoHighlightRIC(RI)
+// added by Agnès Simonet
+{
+		if (DragEx.GetOriginalLeftItemByOrigPos(RI.OrigPos) !== null) // not a distractor
+		{
+			if (RI.MatchedWith !== -1){ // si RI est droppé
+				var LI = DragEx.GetLeftItemByOrigPos(RI.MatchedWith);// sur quel FC
+				if (RI.Groups.indexOf(LI.Group) > -1){
+					RI.MarkedWrong = false;
+					RI.Card.HighlightIfRight();
+				}
+				else{
+					RI.MarkedWrong = true;
+					RI.Card.HighlightIfWrong();
+				}
+			}			
+		}
+
+		else{
+		//It's a distractor and shouldn't be matched. Deduct one from score.
+			if (RI.MatchedWith !== -1){// si DC est droppé
+				RI.MarkedWrong = true;
+				RI.Card.HighlightIfWrong();
+			}
+		}
+			
+}
+
+
+// *************************************
+//            End of functions
+// *************************************
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+</head> 
+
+<body onload="TimerStartUp()" id="TheBody" > 
+<!-- BeginTopNavButtons -->
+
+<!-- added by Agnès Simonet -->
+<!-- Stan Bogdanov - Hiding the audio button player  -->
+		<div id="hiddenPlayer" style="height:0px;"></div>
+<!-- end of addition by Agnès Simonet -->
+
+
+<div class="NavButtonBar" id="TopNavBar">
+
+
+<button class="NavButton" onclick="history.back(); return false;">&lt;=</button>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">Feelings, opinions and descriptions: match the words to their categories</h2>
+
+
+
+</div>
+
+<div id="InstructionsDiv" class="StdDiv">
+	<div id="Instructions"></div>
+</div>
+
+
+<div id="ContainerDiv">
+
+
+
+<div class="ExerciseContainer JMatchDrag">
+
+<div class="StdDiv" id="CheckButtonDiv">
+<button id="CheckButton1" class="FuncButton" onclick="CheckAnswers()">&#160;Check&#160;</button>
+</div>
+
+
+</div>
+</div>
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button id="FeedbackOKButton" class="FuncButton" onclick="HideFeedback(); return false;">&#160;OK&#160;</button>
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+<div id="L_0" class="CardStyle">Physical feelings</div>
+<div id="L_1" class="CardStyle">Physical feelings</div>
+<div id="L_2" class="CardStyle">Physical feelings</div>
+<div id="L_3" class="CardStyle">Physical feelings</div>
+<div id="L_4" class="CardStyle">Opinions</div>
+<div id="L_5" class="CardStyle">Opinions</div>
+<div id="L_6" class="CardStyle">Opinions</div>
+<div id="L_7" class="CardStyle">Opinions</div>
+<div id="L_8" class="CardStyle">Appearance</div>
+<div id="L_9" class="CardStyle">Appearance</div>
+<div id="L_10" class="CardStyle">Appearance</div>
+<div id="L_11" class="CardStyle">Appearance</div>
+<div id="L_12" class="CardStyle">Appearance</div>
+<div id="L_13" class="CardStyle">Size</div>
+<div id="L_14" class="CardStyle">Size</div>
+<div id="L_15" class="CardStyle">Size</div>
+<div id="L_16" class="CardStyle">Size</div>
+<div id="L_17" class="CardStyle">Size</div>
+<div id="L_18" class="CardStyle">Size</div>
+<div id="L_19" class="CardStyle">Size</div>
+<div id="L_20" class="CardStyle">Size</div>
+
+
+
+<div id="R_0" class="CardStyle">no</div>
+<div id="R_1" class="CardStyle">l&#x1EA1;nh</div>
+<div id="R_2" class="CardStyle">n&#x00F3;ng</div>
+<div id="R_3" class="CardStyle">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</div>
+<div id="R_4" class="CardStyle">t&#x1ED3;i t&#x1EC7;</div>
+<div id="R_5" class="CardStyle">tuy&#x1EC7;t v&#x1EDD;i</div>
+<div id="R_6" class="CardStyle">d&#x1EDF;</div>
+<div id="R_7" class="CardStyle">ngon</div>
+<div id="R_8" class="CardStyle">&#x0111;&#x1EB9;p trai</div>
+<div id="R_9" class="CardStyle">m&#x1EAD;p / b&#x00E9;o</div>
+<div id="R_10" class="CardStyle">&#x1ED1;m / g&#x1EA7;y</div>
+<div id="R_11" class="CardStyle">cao</div>
+<div id="R_12" class="CardStyle">th&#x1EA5;p</div>
+<div id="R_13" class="CardStyle">to</div>
+<div id="R_14" class="CardStyle">nh&#x1ECF;</div>
+<div id="R_15" class="CardStyle">d&#x00E0;i</div>
+<div id="R_16" class="CardStyle">ng&#x1EAF;n</div>
+<div id="R_17" class="CardStyle">r&#x1ED9;ng</div>
+<div id="R_18" class="CardStyle">h&#x1EB9;p</div>
+<div id="R_19" class="CardStyle">n&#x00F4;ng</div>
+<div id="R_20" class="CardStyle">s&#x00E2;u</div>
+
+
+
+
+
+</body>
+</html>

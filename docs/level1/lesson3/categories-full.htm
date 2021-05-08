@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" prefix="dc: http://purl.org/dc/elements/1.1/">
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Richard & Bao."/><meta name="keywords" content="Hot Potatoes, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<meta name="dc:creator" content="Richard & Bao" />
+<meta name="dc:title" content="Feelings, opinions and descriptions" />
+
+
+
+<title>
+Feelings, opinions and descriptions
+</title>
+
+<!-- Made with executable version 7.0 Release 3 Build 0 -->
+
+<!-- The following insertion allows you to add your own code directly to this head tag from the configuration screen -->
+
+<h2><center><b><a href="https://teacher-viet.github.io">Learn Vietnamese with Bao </a></b></h2><button onclick="window.print()">Print this page</button></center>
+
+<style>
+
+
+/* This is the CSS stylesheet used in the exercise. */
+/* Elements in square brackets are replaced by data based on configuration settings when the exercise is built. */
+
+/* BeginCorePageCSS */
+
+/* Made with executable version 7.0 Release 3 Build 0 */
+
+
+
+/* CSS variables for colours. */
+:root{
+	--strFontFace:       Geneva,Arial,sans-serif;
+	--strFontSize:       100%;
+	--strTextColor:      #0d0d0d;
+	--strTitleColor:     #303030;
+
+	--strFuncLightColor: #ffffff;
+	--strFuncShadeColor: #7f7f7f;
+	--strLinkColor:      #d5000d;
+	--strVLinkColor:     #0000CC;
+	
+	--strNavBarColor:    #000000;
+	--strNavLightColor:  #7f7f7f;
+	--strNavShadeColor:  #000000;
+	--strNavTextColor:   #ffffff;
+	
+	--strPageBGColor:    #e7e7e7;
+	--strExBGColor:      #FFFFFF;
+}
+
+body{
+	font-family: var(--strFontFace);
+	background-color: var(--strPageBGColor);
+	color: var(--strTextColor);
+ 
+	margin-right: 5%;
+	margin-left: 5%;
+	font-size: var(--strFontSize);
+	padding-bottom: 0.5em;
+}
+
+p{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+table,div,span,td{
+	font-size: 1em;
+	color: var(--strTextColor);
+}
+
+div.Titles{
+	padding: 0.5em;;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+button{
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	display: inline;
+}
+
+.ExerciseTitle{
+	font-size: 140%;
+	color: var(--strTitleColor);
+}
+
+.ExerciseSubtitle{
+	font-size: 120%;
+	color: var(--strTitleColor);
+}
+
+div.StdDiv, div.ExerciseContainer, div.ReadingContainer{
+	background-color: var(--strExBGColor);
+	text-align: center;
+	font-size: 1em;
+	color: var(--strTextColor);
+	padding: 0.5em;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: var(--strTextColor);
+	margin-bottom: 1px;
+}
+
+div.ReadingContainer, div.ExerciseContainer{
+	min-width: 15em;
+	flex-grow: 1;
+	flex-basis: 0;
+	margin: 1px;
+}
+
+div#ContainerDiv{
+	margin: -1px;
+	padding: 0;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* EndCorePageCSS */
+
+.RTLText{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+.CentredRTLText{
+	text-align: center;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Simplified Arabic", "Traditional Arabic", "Times New Roman", var(--strFontFace); 
+}
+
+button p.RTLText{
+	text-align: center;
+}
+
+.RTLGapBox{
+	text-align: right;
+	font-size: 150%;
+	direction: rtl;
+	font-family: "Times New Roman", var(--strFontFace);
+}
+
+.Guess{
+	font-weight: bold;
+}
+
+.CorrectAnswer{
+	font-weight: bold;
+}
+
+div#Timer{
+	padding: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--strTitleColor);
+}
+
+span#TimerText{
+	padding: 0.25em;
+	border-width: 1px;
+	border-style: solid;
+	font-weight: bold;
+	display: none;
+	color: var(--strTitleColor);
+}
+
+span.Instructions{
+
+}
+
+div.ExerciseText{
+
+}
+
+.FeedbackText, .FeedbackText span.CorrectAnswer, .FeedbackText span.Guess, .FeedbackText span.Answer{
+	color: var(--strTitleColor);
+}
+
+.LeftItem{
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+.RightItem{
+	font-weight: bold;
+	font-size: 1em;
+	color: var(--strTextColor);
+	text-align: left;
+}
+
+span.CorrectMark{
+
+}
+
+input, textarea{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+}
+
+select{
+	font-size: 1em;
+}
+
+div.Feedback {
+	background-color: var(--strPageBGColor);
+	left: 33%;
+	width: 34%;
+	top: 33%;
+	z-index: 1;
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+	text-align: center;
+	color: var(--strTitleColor);
+	position: absolute;
+	display: none;
+	font-size: 1em;
+}
+
+
+
+
+div.ExerciseDiv{
+	color: var(--strTextColor);
+}
+
+/* JMatch standard output table. */
+table.MatchTable{
+	margin: 2em auto; 
+	border-width: 0;
+}
+
+/* JMatch flashcard styles */
+table.FlashcardTable{
+	background-color: transparent;
+	color: var(--strTextColor);
+	border-color: var(--strTextColor);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	/*width: 90%;*/
+	position: relative;
+	text-align: center;
+	padding: 0px;
+}
+
+table.FlashcardTable tr{
+	border-style: none;
+	margin: 0px;
+	padding: 0px;
+	background-color: var(--strExBGColor);
+}
+
+table.FlashcardTable td.Showing{
+	font-size: 140%;
+	text-align: center;
+	width: 50%;
+	display: table-cell;
+	padding: 2em;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+	background-color: var(--strPageBGColor);
+}
+
+table.FlashcardTable td.Hidden{
+	display: none;
+}
+
+/* JMix styles */
+div.JMixDrag, div.JMatchDrag{
+	padding: 0;
+	background-color: var(--strPageBGColor);
+	border-style: none;
+}
+
+div#GuessDiv{
+	padding: 0.5em;
+	margin-bottom: 2em;
+}
+
+div#SegmentDiv{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+a.ExSegment{
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--strTextColor);
+	display: inline-block;
+	padding: 0.5em;
+	border: solid 1pt gray;
+	margin-bottom: 0.5em;
+}
+
+span.RemainingWordList{
+	font-style: italic;
+}
+
+div.DropLine {
+	position: absolute;
+	text-align: left;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--strTitleColor);
+	width: 80%;
+	left: 10%;
+}
+
+/* JCloze styles */
+
+.ClozeWordList{
+	text-align: center;
+	font-weight: bold;
+}
+
+div.ClozeBody{
+	text-align: left;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	line-height: 2.0
+}
+
+span.GapSpan{
+	font-weight: bold;
+}
+
+/* JCross styles */
+
+table.CrosswordGrid{
+	margin: auto auto 1em auto;
+	border-collapse: collapse;
+	padding: 0px;
+	background-color: #000000;
+}
+
+table.CrosswordGrid tbody tr td{
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 140%;
+	padding: 1px;
+	margin: 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid span{
+	color: #000000;
+}
+
+table.CrosswordGrid td.BlankCell{
+	background-color: #000000;
+	color: #000000;
+}
+
+table.CrosswordGrid td.LetterOnlyCell{
+	text-align: center;
+	vertical-align: middle;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+table.CrosswordGrid td.NumLetterCell{
+	text-align: left;
+	vertical-align: top;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 1px;
+	font-weight: bold;
+}
+
+.NumLetterCellText{
+	cursor: pointer;
+	color: #000000;
+}
+
+.GridNum{
+	vertical-align: super;
+	font-size: 66%;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+}
+
+.GridNum:hover, .GridNum:visited{
+	color: #000000;
+}
+
+table#Clues{
+	margin: auto;
+	vertical-align: top;
+}
+
+table#Clues td{
+	vertical-align: top;
+}
+
+table.ClueList{
+  margin: auto;
+}
+
+td.ClueNum{
+	text-align: right;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+td.Clue{
+	text-align: left;
+}
+
+div#ClueEntry{
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+/* Keypad styles */
+
+div.Keypad{
+	text-align: center;
+	display: none; /* initially hidden, shown if needed */
+	margin-bottom: 0.5em;
+}
+
+div.Keypad button{
+	font-family: var(--strFontFace);
+	font-size: 120%;
+	background-color: #ffffff;
+	color: #000000;
+	width: 2em;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0.5em;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+}
+
+/* JQuiz styles */
+
+div.QuestionNavigation{
+	text-align: center;
+}
+
+.QNum{
+	margin: 0em 1em 0.5em 1em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+textarea{
+	font-family: var(--strFontFace);
+}
+
+.QuestionText{
+	text-align: left;
+	margin: 0px;
+	font-size: 1em;
+}
+
+.Answer{
+	font-size: 120%;
+}
+
+.PartialAnswer{
+	font-size: 120%;
+	letter-spacing: 0.1em;
+	color: var(--strTitleColor);
+}
+
+.Highlight{
+	color: #000000;
+	background-color: #ffff00;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+ol.QuizQuestions{
+	text-align: left;
+	list-style-type: none;
+}
+
+li.QuizQuestion{
+	padding: 1em;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+}
+
+ol.MCAnswers{
+	text-align: left;
+	list-style-type: upper-alpha;
+	padding: 1em;
+}
+
+ol.MCAnswers li{
+	margin-bottom: 1em;
+}
+
+ol.MSelAnswers{
+	text-align: left;
+	list-style-type: lower-alpha;
+	padding: 1em;
+}
+
+div.ShortAnswer{
+	padding: 1em;
+}
+
+.FuncButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+
+	border-left-color: var(--strFuncLightColor);
+	border-top-color: var(--strFuncLightColor);
+	border-right-color: var(--strFuncShadeColor);
+	border-bottom-color: var(--strFuncShadeColor);
+	color: var(--strTextColor);
+	background-color: var(--strExBGColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strFuncShadeColor);
+}
+
+.FuncButton:active {
+	box-shadow: none;
+}
+
+.FuncButton:hover{
+	color: var(--strExBGColor);
+	background-color: var(--strTextColor);
+}
+
+/*BeginNavBarStyle*/
+
+div.NavButtonBar{
+	background-color: var(--strNavBarColor);
+	text-align: center;
+	margin: 0.25rem 0;
+	clear: both;
+	font-size: 1em;
+	padding: 0.2em;
+	box-sizing: border-box;
+}
+
+.NavButton {
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 3em;
+	
+	border-left-color: var(--strNavLightColor);
+	border-top-color: var(--strNavLightColor);
+	border-right-color: var(--strNavShadeColor);
+	border-bottom-color: var(--strNavShadeColor); 
+	background-color: var(--strNavBarColor);
+	color: var(--strNavTextColor);
+
+	border-width: 1pt;
+	cursor: pointer;	
+	box-shadow: 0.2em 0.3em 0.2em var(--strNavShadeColor);
+}
+
+.NavButton:active {
+	box-shadow: none;
+}
+
+.NavButton:hover{
+	color: var(--strNavBarColor);
+	background-color: var(--strNavTextColor);
+}
+
+/*EndNavBarStyle*/
+
+a{
+	color: var(--strLinkColor);
+}
+
+a:visited{
+	color: var(--strVLinkColor);
+}
+
+a:hover{
+	color: var(--strLinkColor);
+}
+
+div.CardStyle {
+	position: absolute;
+	font-family: var(--strFontFace);
+	font-size: 1em;
+	border-style: solid;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	min-width: 2em;
+	border-width: 1pt;
+	color: var(--strTextColor);
+	box-shadow: 0.2em 0.3em 0.2em var(--strTextColor);
+	background-color: var(--strExBGColor);
+	left: -50px;
+	top: -50px;
+	overflow: visible;
+	touch-action: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+div.CardStyleCentered{
+	text-align: center;
+}
+
+.rtl{
+	text-align: right;
+	font-size: 140%;
+}
+
+
+</style>
+
+<script>
+
+//<![CDATA[
+
+<!--
+
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+function FocusAButton(){
+	if (document.getElementById('CheckButton1') != null){
+		document.getElementById('CheckButton1').focus();
+	}
+	else{
+		if (document.getElementById('CheckButton2') != null){
+			document.getElementById('CheckButton2').focus();
+		}
+		else{
+			document.getElementsByTagName('button')[0].focus();
+		}
+	}
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	this.W = document.getElementsByTagName('body')[0].offsetWidth;
+	this.H = document.getElementsByTagName('body')[0].offsetHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+	var XY = {x: 0, y: 0};
+	while(El){
+		XY.x += El.offsetLeft;
+		XY.y += El.offsetTop;
+		El = El.offsetParent;
+	}
+	return XY;
+}
+
+function GetScrollTop(){
+	if (typeof(window.pageYOffset) == 'number'){
+		return window.pageYOffset;
+	}
+	else{
+		if ((document.body)&&(document.body.scrollTop)){
+			return document.body.scrollTop;
+		}
+		else{
+			if ((document.documentElement)&&(document.documentElement.scrollTop)){
+				return document.documentElement.scrollTop;
+			}
+			else{
+				return 0;
+			}
+		}
+	}
+}
+
+function GetViewportHeight(){
+	if (typeof window.innerHeight != 'undefined'){
+		return window.innerHeight;
+	}
+	else{
+		if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+			return document.documentElement.clientHeight;
+		}
+		else{
+			return document.getElementsByTagName('body')[0].clientHeight;
+		}
+	}
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+	var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+	return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+	if (InTextBox == true){return;}
+	thisKey = e.keyCode;
+
+	var Suppress = false;
+
+	if (thisKey == 8) {
+		Suppress = true;
+		e.preventDefault();
+	}
+}
+
+window.addEventListener('keypress',SuppressBackspace,false);
+
+function ReduceItems(InArray, ReduceToSize){
+	var ItemToDump=0;
+	var j=0;
+	while (InArray.length > ReduceToSize){
+		ItemToDump = Math.floor(InArray.length*Math.random());
+		InArray.splice(ItemToDump, 1);
+	}
+}
+
+function Shuffle(InArray){
+	var Num;
+	var Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < (j-1); k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+	document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+	return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+	if (InArray.length < 1){return -1;}
+
+	var Longest = 0;
+	for (var i=1; i<InArray.length; i++){
+		if (InArray[i].length > InArray[Longest].length){
+			Longest = i;
+		}
+	}
+	return Longest;
+}
+
+//SELECTION OBJECT FOR TYPING WITH KEYPAD
+var selObj = null;
+            
+SelObj = function(box){
+	this.box = box;
+	this.selStart = this.box.selectionStart;
+	this.selEnd = this.box.selectionEnd;
+	this.selText = this.box.value.substring(this.selStart, this.selEnd);
+	return this;
+}
+
+function setSelText(newText){
+	var caretPos = this.selStart + newText.length;
+	var newValue = this.box.value.substring(0, this.selStart);
+	newValue += newText;
+	newValue += this.box.value.substring(this.selEnd, this.box.value.length);
+	this.box.value = newValue;
+	this.box.setSelectionRange(caretPos, caretPos);
+	this.box.focus();
+}
+SelObj.prototype.setSelText = setSelText;
+
+function setSelSelectionRange(start, end){
+	this.box.setSelectionRange(start, end);
+}
+SelObj.prototype.setSelSelectionRange = setSelSelectionRange;
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+	var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+	Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+	return Result;
+}
+
+function IsCJK(CharNum){
+	return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+	var NList = document.getElementsByTagName('input');
+	for (var i=0; i<NList.length; i++){
+		if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+			NList[i].value = '';
+		}
+		if (NList[i].id.indexOf('Chk') > -1){
+			NList[i].checked = '';
+		}
+	}
+}
+
+
+
+
+
+
+
+//JMATCH-SPECIFIC CORE JAVASCRIPT CODE
+
+var CurrItem = null;
+var Stage = 2;
+var QList = new Array();
+var ShuffleQs = true;
+	
+function SetUpItems(){
+
+	var i;
+	var Row = null;
+
+//Remove all the table rows and put them in an array for processing
+	var Qs = document.getElementById('Questions');
+
+//Remove the table rows to an array
+	while (Qs.getElementsByTagName('tr').length > 0){
+		Row = Qs.getElementsByTagName('tr')[0];
+		Row.getElementsByTagName('td')[0].className = 'Hidden';
+		Row.getElementsByTagName('td')[1].className = 'Hidden';
+		QList.push(Qs.removeChild(Row));
+	}
+	
+//Shuffle the rows
+	if (ShuffleQs == true){
+		QList = Shuffle(QList);
+	}
+
+//Write the rows back to the table body
+	for (i=0; i<QList.length; i++){
+		Qs.appendChild(QList[i]);
+	}
+}
+
+function StartUp(){
+
+	SetUpItems();
+	
+
+
+
+
+
+
+}
+
+var Started = false;
+
+function DeleteItem(){
+	if ((CurrItem == null)||(document.getElementById('Questions').getElementsByTagName('tr').length < 1)){return;}
+	
+//Delete the current item
+	var DelItem = CurrItem;
+	Stage = 2;
+	ShowItem();
+	document.getElementById('Questions').removeChild(DelItem);
+}
+
+function ShowItem(){
+	var Qs = document.getElementById('Questions');
+
+	var Len = Qs.getElementsByTagName('tr').length;
+
+//Bail if no more items
+	if (Len < 1){
+		return;
+	}
+	
+//if no current item, get the last item so we roll forward
+	if (CurrItem == null){
+		CurrItem = Qs.getElementsByTagName('tr')[Len-1];
+		if (CurrItem == null){
+			return;
+		}
+	}
+	
+//if CurrItem has been fully shown, move to the next one
+	if (Stage == 2){
+		CurrItem.getElementsByTagName('td')[0].className = 'Hidden';
+		CurrItem.getElementsByTagName('td')[1].className = 'Hidden';
+		if (CurrItem.nextSibling != null){
+			CurrItem = CurrItem.nextSibling;
+		}
+		else{
+			CurrItem = Qs.getElementsByTagName('tr')[0];
+		}
+	}
+	
+//Show the appropriate bits
+	if (Stage == 2){
+//Show the first item and hide the second
+		CurrItem.getElementsByTagName('td')[0].className = 'Showing';
+		CurrItem.getElementsByTagName('td')[1].className = 'Hidden';
+		Stage = 1;
+	}
+	else{
+//Show both items
+		CurrItem.getElementsByTagName('td')[0].className = 'Showing';
+		CurrItem.getElementsByTagName('td')[1].className = 'Showing';
+		Stage = 2;		
+	}
+	
+
+}
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+
+<body onload="StartUp()" id="TheBody" >
+
+<!-- BeginTopNavButtons -->
+
+
+<div class="NavButtonBar" id="TopNavBar">
+
+
+<button class="NavButton" onclick="history.back(); return false;">&lt;=</button>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- EndTopNavButtons -->
+
+<div class="Titles">
+	<h2 class="ExerciseTitle">Feelings, opinions and descriptions</h2>
+
+	<h3 class="ExerciseSubtitle">Flashcard exercise</h3>
+
+</div>
+
+<div id="InstructionsDiv" class="StdDiv">
+	<div id="Instructions">Click Next to start the exercise and choose your first card.<br />If it is English, say the Vietnamese for this word, then click Next to check your answer.<br />If it is in Vietnamese, practise saying the word and try to remember the meaning. Click Next to check your memory.<br />Click Skip to miss the card</div>
+</div>
+
+<div id="ContainerDiv">
+
+
+
+<div class="ExerciseContainer">
+
+<button class="FuncButton" onclick="ShowItem()">Next</button>
+
+<button class="FuncButton" onclick="DeleteItem()">Skip</button>
+
+<table class="FlashcardTable" style="border-width: 0; margin-left: auto; margin-right: auto;">
+<tbody id="Questions">
+
+<tr class="FlashcardRow" id="I_0"><td id="L_0">kh&#x1ECF;e</td><td id="R_0">well</td></tr><tr class="FlashcardRow" id="I_1"><td id="L_1">m&#x1EC7;t</td><td id="R_1">tired</td></tr><tr class="FlashcardRow" id="I_2"><td id="L_2">kh&#x00E1;t</td><td id="R_2">thirsty</td></tr><tr class="FlashcardRow" id="I_3"><td id="L_3">&#x0111;&#x00F3;i</td><td id="R_3">hungry</td></tr><tr class="FlashcardRow" id="I_4"><td id="L_4">bu&#x1ED3;n</td><td id="R_4">sad</td></tr><tr class="FlashcardRow" id="I_5"><td id="L_5">vui</td><td id="R_5">happy</td></tr><tr class="FlashcardRow" id="I_6"><td id="L_6">ph&#x1EA5;n kh&#x00ED;ch</td><td id="R_6">excited</td></tr><tr class="FlashcardRow" id="I_7"><td id="L_7">lo l&#x1EAF;ng</td><td id="R_7">nervous</td></tr><tr class="FlashcardRow" id="I_8"><td id="L_8">lo &#x00E2;u</td><td id="R_8">anxious</td></tr><tr class="FlashcardRow" id="I_9"><td id="L_9">th&#x1EA5;t v&#x1ECD;ng</td><td id="R_9">disappointed</td></tr><tr class="FlashcardRow" id="I_10"><td id="L_10">m&#x1EAF;c / d&#x1EAF;t</td><td id="R_10">expensive</td></tr><tr class="FlashcardRow" id="I_11"><td id="L_11">r&#x1EBB;</td><td id="R_11">cheap</td></tr><tr class="FlashcardRow" id="I_12"><td id="L_12">hay</td><td id="R_12">interesting</td></tr><tr class="FlashcardRow" id="I_13"><td id="L_13">ch&#x00E1;n</td><td id="R_13">boring</td></tr><tr class="FlashcardRow" id="I_14"><td id="L_14">l&#x1EA1;</td><td id="R_14">strange</td></tr><tr class="FlashcardRow" id="I_15"><td id="L_15">&#x0111;&#x1EB9;p</td><td id="R_15">beautiful</td></tr><tr class="FlashcardRow" id="I_16"><td id="L_16">x&#x1EA5;u</td><td id="R_16">ugly</td></tr><tr class="FlashcardRow" id="I_17"><td id="L_17">d&#x1EC5; th&#x01B0;&#x01A1;ng</td><td id="R_17">cute</td></tr><tr class="FlashcardRow" id="I_18"><td id="L_18">xinh</td><td id="R_18">pretty</td></tr><tr class="FlashcardRow" id="I_19"><td id="L_19">no</td><td id="R_19">full</td></tr><tr class="FlashcardRow" id="I_20"><td id="L_20">t&#x1ED3;i t&#x1EC7;</td><td id="R_20">awful</td></tr><tr class="FlashcardRow" id="I_21"><td id="L_21">tuy&#x1EC7;t v&#x1EDD;i</td><td id="R_21">great</td></tr><tr class="FlashcardRow" id="I_22"><td id="L_22">l&#x1EA1;nh</td><td id="R_22">cold</td></tr><tr class="FlashcardRow" id="I_23"><td id="L_23">n&#x00F3;ng</td><td id="R_23">hot</td></tr><tr class="FlashcardRow" id="I_24"><td id="L_24">cao</td><td id="R_24">tall</td></tr><tr class="FlashcardRow" id="I_25"><td id="L_25">th&#x1EA5;p</td><td id="R_25">low</td></tr><tr class="FlashcardRow" id="I_26"><td id="L_26">m&#x00E2;p / b&#x00E9;o</td><td id="R_26">fat</td></tr><tr class="FlashcardRow" id="I_27"><td id="L_27">&#x1ED1;m / g&#x1EA7;y</td><td id="R_27">thin</td></tr><tr class="FlashcardRow" id="I_28"><td id="L_28">ngon</td><td id="R_28">delicious</td></tr><tr class="FlashcardRow" id="I_29"><td id="L_29">d&#x1ED5;</td><td id="R_29">bad tasting</td></tr><tr class="FlashcardRow" id="I_30"><td id="L_30">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</td><td id="R_30">so-so</td></tr><tr class="FlashcardRow" id="I_31"><td id="L_31">to</td><td id="R_31">big</td></tr><tr class="FlashcardRow" id="I_32"><td id="L_32">nh&#x1ECF;</td><td id="R_32">small</td></tr><tr class="FlashcardRow" id="I_33"><td id="L_33">d&#x00E0;i</td><td id="R_33">long</td></tr><tr class="FlashcardRow" id="I_34"><td id="L_34">ng&#x1EAF;n</td><td id="R_34">short</td></tr><tr class="FlashcardRow" id="I_35"><td id="L_35">r&#x1ED9;ng</td><td id="R_35">large / wide</td></tr><tr class="FlashcardRow" id="I_36"><td id="L_36">h&#x1EB9;p</td><td id="R_36">narrow</td></tr><tr class="FlashcardRow" id="I_37"><td id="L_37">n&#x00F4;ng</td><td id="R_37">shallow</td></tr><tr class="FlashcardRow" id="I_38"><td id="L_38">s&#x00E2;u</td><td id="R_38">deep</td></tr><tr class="FlashcardRow" id="I_39"><td id="L_39">&#x0111;&#x1EB9;p trai</td><td id="R_39">handsome</td></tr><tr class="FlashcardRow" id="I_40"><td id="L_40">well</td><td id="R_40">kh&#x1ECF;e</td></tr><tr class="FlashcardRow" id="I_41"><td id="L_41">tired</td><td id="R_41">m&#x1EC7;t</td></tr><tr class="FlashcardRow" id="I_42"><td id="L_42">thirsty</td><td id="R_42">kh&#x00E1;t</td></tr><tr class="FlashcardRow" id="I_43"><td id="L_43">hungry</td><td id="R_43">&#x0111;&#x00F3;i</td></tr><tr class="FlashcardRow" id="I_44"><td id="L_44">sad</td><td id="R_44">bu&#x1ED3;n</td></tr><tr class="FlashcardRow" id="I_45"><td id="L_45">happy</td><td id="R_45">vui</td></tr><tr class="FlashcardRow" id="I_46"><td id="L_46">excited</td><td id="R_46">ph&#x1EA5;n kh&#x00ED;ch</td></tr><tr class="FlashcardRow" id="I_47"><td id="L_47">nervous</td><td id="R_47">lo l&#x1EAF;ng</td></tr><tr class="FlashcardRow" id="I_48"><td id="L_48">anxious</td><td id="R_48">lo &#x00E2;u</td></tr><tr class="FlashcardRow" id="I_49"><td id="L_49">disappointed</td><td id="R_49">th&#x1EA5;t v&#x1ECD;ng</td></tr><tr class="FlashcardRow" id="I_50"><td id="L_50">expensive</td><td id="R_50">m&#x1EAF;c / d&#x1EAF;t</td></tr><tr class="FlashcardRow" id="I_51"><td id="L_51">cheap</td><td id="R_51">r&#x1EBB;</td></tr><tr class="FlashcardRow" id="I_52"><td id="L_52">interesting</td><td id="R_52">hay</td></tr><tr class="FlashcardRow" id="I_53"><td id="L_53">boring</td><td id="R_53">ch&#x00E1;n</td></tr><tr class="FlashcardRow" id="I_54"><td id="L_54">strange</td><td id="R_54">l&#x1EA1;</td></tr><tr class="FlashcardRow" id="I_55"><td id="L_55">beautiful</td><td id="R_55">&#x0111;&#x1EB9;p</td></tr><tr class="FlashcardRow" id="I_56"><td id="L_56">ugly</td><td id="R_56">x&#x1EA5;u</td></tr><tr class="FlashcardRow" id="I_57"><td id="L_57">cute</td><td id="R_57">d&#x1EC5; th&#x01B0;&#x01A1;ng</td></tr><tr class="FlashcardRow" id="I_58"><td id="L_58">pretty</td><td id="R_58">xinh</td></tr><tr class="FlashcardRow" id="I_59"><td id="L_59">full</td><td id="R_59">no</td></tr><tr class="FlashcardRow" id="I_60"><td id="L_60">awful</td><td id="R_60">t&#x1ED3;i t&#x1EC7;</td></tr><tr class="FlashcardRow" id="I_61"><td id="L_61">great</td><td id="R_61">tuy&#x1EC7;t v&#x1EDD;i</td></tr><tr class="FlashcardRow" id="I_62"><td id="L_62">cold</td><td id="R_62">l&#x1EA1;nh</td></tr><tr class="FlashcardRow" id="I_63"><td id="L_63">hot</td><td id="R_63">n&#x00F3;ng</td></tr><tr class="FlashcardRow" id="I_64"><td id="L_64">tall</td><td id="R_64">cao</td></tr><tr class="FlashcardRow" id="I_65"><td id="L_65">low</td><td id="R_65">th&#x1EA5;p</td></tr><tr class="FlashcardRow" id="I_66"><td id="L_66">fat</td><td id="R_66">m&#x00E2;p / b&#x00E9;o</td></tr><tr class="FlashcardRow" id="I_67"><td id="L_67">thin</td><td id="R_67">&#x1ED1;m / g&#x1EA7;y</td></tr><tr class="FlashcardRow" id="I_68"><td id="L_68">delicious</td><td id="R_68">ngon</td></tr><tr class="FlashcardRow" id="I_69"><td id="L_69">bad tasting</td><td id="R_69">d&#x1ED5;</td></tr><tr class="FlashcardRow" id="I_70"><td id="L_70">so-so</td><td id="R_70">b&#x00EC;nh th&#x01B0;&#x1EDD;ng</td></tr><tr class="FlashcardRow" id="I_71"><td id="L_71">big</td><td id="R_71">to</td></tr><tr class="FlashcardRow" id="I_72"><td id="L_72">small</td><td id="R_72">nh&#x1ECF;</td></tr><tr class="FlashcardRow" id="I_73"><td id="L_73">long</td><td id="R_73">d&#x00E0;i</td></tr><tr class="FlashcardRow" id="I_74"><td id="L_74">short</td><td id="R_74">ng&#x1EAF;n</td></tr><tr class="FlashcardRow" id="I_75"><td id="L_75">large</td><td id="R_75">r&#x1ED9;ng</td></tr><tr class="FlashcardRow" id="I_76"><td id="L_76">narrow</td><td id="R_76">h&#x1EB9;p</td></tr><tr class="FlashcardRow" id="I_77"><td id="L_77">shallow</td><td id="R_77">n&#x00F4;ng</td></tr><tr class="FlashcardRow" id="I_78"><td id="L_78">deep</td><td id="R_78">s&#x00E2;u</td></tr><tr class="FlashcardRow" id="I_79"><td id="L_79">handsome</td><td id="R_79">&#x0111;&#x1EB9;p trai</td></tr>
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- BeginBottomNavButtons -->
+
+
+<div class="NavButtonBar" id="BottomNavBar">
+
+
+<button class="NavButton" onclick="history.back(); return false;">&lt;=</button>
+
+
+
+
+
+
+</div>
+
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+
+</body>
+
+</html>
