@@ -7,7 +7,7 @@
 * [Getting to know people](https://teacher-viet.github.io/level1/freestyle/freestyle_getting_to_know_you.htm)
 
 
-<h4>Flashcards</h4>
+<h4>Phrase cards</h4>
 * [Meeting people and making conversation](https://teacher-viet.github.io/level1/flashcards/meeting_people.htm)
 * Expressing feelings and opinions
 
