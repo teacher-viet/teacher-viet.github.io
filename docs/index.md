@@ -3,3 +3,4 @@
 [{{ file.basename }}]({{site.baseurl}}/{{file.basename}}.html)
 {% endif %}
 {% endfor %}
+layout: default
