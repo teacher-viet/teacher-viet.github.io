@@ -2,6 +2,11 @@
 {% if file.extname == ".md" %}
 [{{ file.basename }}]({{site.baseurl}}/{{file.basename}}.html)
 {% endif %}
-{% if page.file_name == 'index.html' %}Home{% else %}{{ page.title }}
-{% endif %}
+{% set current_page = 'index.html' %}
+{% set display_name = 'Home' %}
+{% if current_page == 'index.html' %}
+            {{ display_name }} (index.html)
+        {% else %}
+            {{ current_page }}
+        {% endif %}
 {% endfor %}
