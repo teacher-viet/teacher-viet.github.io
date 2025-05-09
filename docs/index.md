@@ -2,6 +2,6 @@
 {% if file.extname == ".md" %}
 [{{ file.basename }}]({{site.baseurl}}/{{file.basename}}.html)
 exclude:
-        - index.md
+        - "index.md"
 {% endif %}
 {% endfor %}
