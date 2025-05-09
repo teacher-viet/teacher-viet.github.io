@@ -3,9 +3,3 @@
     [{{ file.basename }}]({{ site.baseurl }}/{{ file.basename }}.html)
   {% endif %}
 {% endfor %}
-
-{% if page.url == "/index.html" %}
-  {{ 'Home' }}
-{% else %}
-  {{ page.title }}
-{% endif %}
