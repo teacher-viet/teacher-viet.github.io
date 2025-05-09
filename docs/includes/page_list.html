@@ -1,10 +1,1 @@
-{% for file in site.static_files %}
-  {% if file.extname == ".md" %}
-    {% if file.name == "index" %}
-      <a href="{{ site.baseurl }}/index.html">Home</a>
-    {% else %}
-      {% assign page_name = file.basename | replace: '_', ' ' | capitalize %}
-      <a href="{{ site.baseurl }}/{{ file.basename }}.html">{{ page_name }}</a>
-    {% endif %}
-  {% endif %}
-{% endfor %}
+<p>This is a test include.</p>
