@@ -4,5 +4,5 @@
 {% if file.basename == "/index.html" %}
 <a href="/index.html">Home</a>
 {% endif %}
-{% endfor %}
 {% endunless %}
+{% endfor %}
