@@ -1,1 +1,1 @@
-{% include page_list.html %}
+{% include test.html %}
