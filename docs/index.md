@@ -1,6 +1,6 @@
 {% for file in site.static_files %}
 {% if file.extname == ".md" %}
 [{{ file.basename }}]({{site.baseurl}}/{{file.basename}}.html)
-{% except index.md %}
+{% unless index.html %}
 {% endif %}
 {% endfor %}
