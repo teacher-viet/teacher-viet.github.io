@@ -1,5 +1,5 @@
 {% for file in site.static_files %}
-{% if file.basename == "index.md" %}
+{% if file.basename == "index" %}
 [{{ file.basename }}]({{site.baseurl}}/{{file.basename}}.html)}
 <a href="/index.html">Home</a>
 {% elsif file.ext == "*.md" %}
