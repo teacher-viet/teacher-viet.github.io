@@ -4,10 +4,8 @@
   {% endif %}
 {% endfor %}
 
-{% assign current_page = "index.html" %}
-{% assign display_name = "Home" %}
-{% if page.url == "/" or page.url == "/index.html" %}
-  {{ display_name }}
+{% if page.url == "/index.html" %}
+  {{ 'Home' }}
 {% else %}
   {{ page.title }}
 {% endif %}
